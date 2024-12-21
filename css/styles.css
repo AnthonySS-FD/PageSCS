@@ -11329,6 +11329,13 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
 }
+.fa-stack {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.5em;
+    position: relative;
+    width: 2.5em;
+}
 
 .footer {
   background: #000;
