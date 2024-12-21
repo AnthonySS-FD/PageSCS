@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Specifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #e0dfc5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #d9b88b;
+            color: #fff;
+        }
+
+        .section-title {
+            background-color: #d9b88b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .images img {
+            max-width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .interactive-table {
+            margin-bottom: 20px;
+        }
+
+        .interactive-table table {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .interactive-table table:hover {
+            background-color: #a7c9aa;
+        }
+
+        .expandable-section {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #d0f1d5;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .expandable-header {
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content:center;
+            text-align: center;
+        }
+
+        .expandable-content {
+            display: none;
+            padding-top: 10px;
+        }
+
+        .side-decor {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            background: linear-gradient(180deg, #6f4e37, #a67b5b);
+            z-index: 0;
+        }
+
+        .side-decor.left {
+            left: -70px;
+        }
+
+        .side-decor.right {
+            right: -70px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .accent {
+            color: #6f4e37;
+        }
+        .expandable-content p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="side-decor left"></div>
+    <div class="container">
+        <div class="expandable-section">
+            <div class="expandable-header" onclick="toggleExpandable(this)">
+                <span>Vista General del Producto</span>
+                <span>&#x25BC;</span>
+            </div>
+            <div class="expandable-content">
+                <h2>Descripción del Producto</h2>
+                <p>Nuestro Cacao se distingue por su calidad premium y sus características excepcionales, diseñadas para cumplir con los más altos estándares del mercado.</p>
+            </div>
+        </div>
+
+        <div class="section-title">Características</div>
+        <table class="interactive-table">
+            <thead>
+                <tr>
+                    <th>Características</th>
+                    <th>Parámetro</th>
+                    <th>Unidad</th>
+                    <th>Especificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Sensorial</b></td>
+                    <td>Fragancia y Aroma</td>
+                    <td>-</td>
+                    <td>Hierbas / Semillas</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Sabor</td>
+                    <td>-</td>
+                    <td>Cítricos, chocolate y durazno</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Sabor Residual</td>
+                    <td>-</td>
+                    <td>Dulce, ligeramente seco y ácido</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Calidad de taza</td>
+                    <td>-</td>
+                    <td>83 - 86 puntos</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Cuerpo</td>
+                    <td>-</td>
+                    <td>Suave</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Olor</td>
+                    <td>-</td>
+                    <td>Característico a café</td>
+                </tr>
+                <tr>
+                    <td><b>Físicas</b></td>
+                    <td>Humedad</td>
+                    <td>%</td>
+                    <td>Máx. 12.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Rendimiento</td>
+                    <td>%</td>
+                    <td>90 %</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Fermentación</td>
+                    <td>-</td>
+                    <td>Ausencia</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Acidez</td>
+                    <td>-</td>
+                    <td>Media</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">Fotos del Producto</div>
+        <div class="images">
+            <iframe 
+            title="cacao"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="300px" height="250px"
+            src="https://sketchfab.com/models/08134400fe2a46bc96cf75ff02c1dba7/embed?autospin=1&autostart=1&ui_controls=0&ui_hint=0&transparent=1">
+        </iframe>
+
+        <iframe 
+            title="cacao"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="300px" height="250px"
+            src="https://sketchfab.com/models/fb6e2d196644473294c4ae3970b6712d/embed?autospin=1&autostart=1&preload=1&ui_hint=2&transparent=1">
+        </iframe>
+        </div>
+
+        <div class="section-title">Empaque y Embalaje</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Empaque</th>
+                    <th>Tipo</th>
+                    <th>Material</th>
+                    <th>Capacidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primario</td>
+                    <td>Saco y/o bolsa de polipropileno</td>
+                    <td>Yute</td>
+                    <td>25 kg</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">Almacenamiento</div>
+        
+        <p class="note">
+            Conservar en un lugar seco, limpio y ventilado, no dejar a la intemperie. No almacenar cerca de otras sustancias químicas (combustibles, pinturas, etc.).
+        </p>
+
+        <div class="section-title">Vida Útil</div>
+        <p class="note">
+            Manteniendo las condiciones de almacenamiento establecidas: 06 meses.
+        </p>
+    </div>
+   
+
+    <script>
+        function toggleExpandable(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('span:last-child');
+
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                arrow.textContent = '▼';
+            } else {
+                content.style.display = 'block';
+                arrow.textContent = '▲';
+            }
+        }
+    </script>
+</body>
+</html>
