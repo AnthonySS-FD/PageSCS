@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
         }
 
         .container {
-            width: 90%;
+            width: 93%;
             margin: auto;
             overflow: hidden;
         }
@@ -34,17 +35,18 @@
         .expandable-header {
             background-color: #3e2a1f;
             color: #fff;
-            padding: 10px;
+            padding: 15px 10px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px
         }
 
         .expandable-content {
             display: none;
-            padding: 20px;
+            padding: 20px 10px;
             background-color: #fff;
             border: 1px solid #ddd;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -59,8 +61,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .interactive-table th, .interactive-table td {
-            padding: 12px;
+        .interactive-table th,
+        .interactive-table td {
+            padding: 12px 8px;
             border: 1px solid #ddd;
             text-align: left;
         }
@@ -96,7 +99,7 @@
 
         .note {
             background-color: #fff;
-            padding: 20px;
+            padding: 20px 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -107,7 +110,7 @@
         .btn-cacao {
             background-color: #3e2a1f;
             color: #fff;
-            padding: 15px 30px;
+            padding: 20px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -126,6 +129,44 @@
         .container2 {
             text-align: center;
         }
+
+        @media (max-width: 350px) {
+            .section-title {
+                font-size: 20px;
+            }
+
+            .expandable-header {
+                padding: 10px 5px;
+                margin-top: 20px
+            }
+
+            .expandable-content {
+                padding: 15px 5px;
+            }
+
+            .interactive-table th,
+            .interactive-table td {
+                padding: 10px 5px;
+                font-size: 12px;
+            }
+
+            .interactive-table th {
+                font-size: 14px;
+            }
+
+            .note {
+                padding: 15px 5px;
+            }
+
+            .btn-cacao {
+                padding: 15px 10px;
+                font-size: 14px;
+            }
+
+            .product-iframe {
+                height: 200px;
+            }
+        }
     </style>
     <script>
         function toggleExpandable(element) {
@@ -138,6 +179,7 @@
         }
     </script>
 </head>
+
 <body>
     <div class="side-decor left"></div>
     <div class="container">
@@ -148,7 +190,8 @@
             </div>
             <div class="expandable-content">
                 <h2>Descripción del Producto</h2>
-                <p>Nuestro Cacao se distingue por su calidad premium y sus características excepcionales, diseñadas para cumplir con los más altos estándares del mercado.</p>
+                <p>Nuestro Cacao se distingue por su calidad premium y sus características excepcionales, diseñadas para
+                    cumplir con los más altos estándares del mercado.</p>
             </div>
         </div>
 
@@ -217,26 +260,16 @@
 
         <div class="section-title">Fotos del Producto</div>
         <div class="images">
-            <iframe 
-                title="cacao"
-                frameborder="0"
-                allowfullscreen
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                class="product-iframe"
-                src="https://sketchfab.com/models/08134400fe2a46bc96cf75ff02c1dba7/embed?autospin=1&autostart=1&ui_controls=0&ui_hint=0&transparent=1">
+            <iframe title="Coffee beans" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                execution-while-out-of-viewport execution-while-not-rendered web-share
+                src="https://sketchfab.com/models/8146e99925fb4b49839e4fa7ace83f0f/embed?autospin=1&autostart=1&preload=1&transparent=1">
             </iframe>
 
-            <iframe 
-                title="cacao"
-                frameborder="0"
-                allowfullscreen
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                class="product-iframe"
-                src="https://sketchfab.com/models/fb6e2d196644473294c4ae3970b6712d/embed?autospin=1&autostart=1&preload=1&ui_hint=2&transparent=1">
+            <iframe title="Burlap Sacks of Coffee Beans" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                execution-while-out-of-viewport execution-while-not-rendered web-share
+                src="https://sketchfab.com/models/fdc3edf4e66d49d7ad603c6c35953fb5/embed?autospin=1&autostart=1&preload=1&transparent=1">
             </iframe>
         </div>
 
@@ -262,7 +295,8 @@
 
         <div class="section-title">Almacenamiento</div>
         <p class="note">
-            Conservar en un lugar seco, limpio y ventilado, no dejar a la intemperie. No almacenar cerca de otras sustancias químicas (combustibles, pinturas, etc.).
+            Conservar en un lugar seco, limpio y ventilado, no dejar a la intemperie. No almacenar cerca de otras
+            sustancias químicas (combustibles, pinturas, etc.).
         </p>
 
         <div class="section-title">Vida Útil</div>
@@ -274,4 +308,5 @@
         </div>
     </div>
 </body>
+
 </html>
