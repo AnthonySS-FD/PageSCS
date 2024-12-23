@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha Técnica del Café</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -130,7 +132,7 @@
             text-align: center;
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 350px) {
             .section-title {
                 font-size: 20px;
             }
@@ -180,7 +182,7 @@
     </script>
 </head>
 
-<body>
+<body id="ficha-pdf">
     <div class="side-decor left"></div>
     <div class="container">
         <div class="expandable-section">
@@ -188,12 +190,84 @@
                 <span>Vista General del Producto</span>
                 <span>&#x25BC;</span>
             </div>
-            <div class="expandable-content">
+            <div class="expandable-content" >
                 <h2>Descripción del Producto</h2>
-                <p>Nuestro Café se distingue por su calidad premium y sus características excepcionales, diseñadas para
+                <p>Nuestro Cacao se distingue por su calidad premium y sus características excepcionales, diseñadas para
                     cumplir con los más altos estándares del mercado.</p>
             </div>
         </div>
+    <div class="container">
+        <div class="section-title">Ficha Técnica</div>
+        <div id="fichaContent">
+            <table class="interactive-table">
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Producto</td>
+                        <td>Café en Granos Verdes</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre Internacional</td>
+                        <td>Green Coffee Beans</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre Científico</td>
+                        <td>Coffee Arábica</td>
+                    </tr>
+                    <tr>
+                        <td>Partida Arancelaria</td>
+                        <td>0901.11.90.00</td>
+                    </tr>
+                    <tr>
+                        <td>Variedades</td>
+                        <td>Blend (Geisha, Típica, Caturra)</td>
+                    </tr>
+                    <tr>
+                        <td>Taza</td>
+                        <td>83 - 86</td>
+                    </tr>
+                    <tr>
+                        <td>Certificación</td>
+                        <td>Orgánico</td>
+                    </tr>
+                    <tr>
+                        <td>Altitud</td>
+                        <td>1400 - 1600 msnm</td>
+                    </tr>
+                    <tr>
+                        <td>Auge de Producción</td>
+                        <td>Abril - Agosto</td>
+                    </tr>
+                    <tr>
+                        <td>Ciudad</td>
+                        <td>Bagua Grande, Amazonas</td>
+                    </tr>
+                    <tr>
+                        <td>País</td>
+                        <td>Perú</td>
+                    </tr>
+                    <tr>
+                        <td>Origen</td>
+                        <td>Selva Norte del Perú</td>
+                    </tr>
+                    <tr>
+                        <td>Descripción</td>
+                        <td>Café en granos verdes, cosechados de manera cuidadosa. En sacos de Yute de 45 kg a 69 kg. Contamos con cafés limpiados naturalmente y lavados, siguiendo los estándares de seguridad alimentaria. El café es un estimulante del sistema nervioso debido al alcaloide cafeína que contiene. Tiene propiedades antioxidantes, analgésicas y es un estimulante natural del metabolismo.</td>
+                    </tr>
+                    <tr>
+                        <td>Uso del Producto</td>
+                        <td>Procesado mediante tostado y posteriormente molido para el consumo.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
 
         <div class="section-title">Características</div>
         <table class="interactive-table">
@@ -263,13 +337,13 @@
             <iframe title="Coffee beans" frameborder="0" allowfullscreen mozallowfullscreen="true"
                 webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
                 execution-while-out-of-viewport execution-while-not-rendered web-share
-                src="https://sketchfab.com/models/8146e99925fb4b49839e4fa7ace83f0f/embed?autospin=1&autostart=1&preload=1&transparent=1">
+                src="https://sketchfab.com/models/8146e99925fb4b49839e4fa7ace83f0f/embed?&autostart=1&preload=1&transparent=1">
             </iframe>
 
             <iframe title="Burlap Sacks of Coffee Beans" frameborder="0" allowfullscreen mozallowfullscreen="true"
                 webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
                 execution-while-out-of-viewport execution-while-not-rendered web-share
-                src="https://sketchfab.com/models/fdc3edf4e66d49d7ad603c6c35953fb5/embed?autospin=1&autostart=1&preload=1&transparent=1">
+                src="https://sketchfab.com/models/fdc3edf4e66d49d7ad603c6c35953fb5/embed?&autostart=1&preload=1&transparent=1">
             </iframe>
         </div>
 
@@ -305,6 +379,7 @@
         </p>
         <div class="container2">
             <a href="index.html"><button class="btn-cacao">Listo</button></a>
+            <button class="btn-cacao" onclick="downloadPDF()">Descargar PDF</button>
         </div>
     </div>
 </body>
@@ -441,7 +516,7 @@
             text-align: center;
         }
 
-        @media (max-width: 350px) {
+        @media (max-width: 400px) {
             .section-title {
                 font-size: 20px;
             }
@@ -490,8 +565,22 @@
                 content.style.display = "block";
             }
         }
+
+        function downloadPDF() {
+            const element = document.getElementById('ficha-pdf');
+            const options = {
+                margin: 0.5,
+                filename: 'Ficha_Tecnica_Cafe.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 4 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(element).set(options).save();
+        }
     </script>
 </head>
 
 
 </html>
+
+
