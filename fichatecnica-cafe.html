@@ -15,7 +15,7 @@
         }
 
         .container {
-            width: 93%;
+            width: 98%;
             margin: auto;
             overflow: hidden;
         }
@@ -93,7 +93,7 @@
             max-width: 300px;
             height: 300px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -101,7 +101,7 @@
             background-color: #fff;
             padding: 20px 10px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
             margin-bottom: 20px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -112,7 +112,7 @@
             color: #fff;
             padding: 20px 15px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             text-align: center;
             display: inline-block;
@@ -136,17 +136,17 @@
             }
 
             .expandable-header {
-                padding: 10px 5px;
+                padding: 10px 3px;
                 margin-top: 20px
             }
 
             .expandable-content {
-                padding: 15px 5px;
+                padding: 15px 3px;
             }
 
             .interactive-table th,
             .interactive-table td {
-                padding: 10px 5px;
+                padding: 10px 3px;
                 font-size: 12px;
             }
 
@@ -155,12 +155,12 @@
             }
 
             .note {
-                padding: 15px 5px;
+                padding: 15px 3px;
             }
 
             .btn-cacao {
-                padding: 15px 10px;
-                font-size: 14px;
+                padding: 20px 15px;
+                font-size: 20px;
             }
 
             .product-iframe {
@@ -308,316 +308,4 @@
         </div>
     </div>
 </body>
-
-</html><!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha Técnica del Café</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        .container {
-            width: 93%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .expandable-section {
-            margin-bottom: 20px;
-        }
-
-        .expandable-header {
-            background-color: #3e2a1f;
-            color: #fff;
-            padding: 15px 10px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px
-        }
-
-        .expandable-content {
-            display: none;
-            padding: 20px 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .interactive-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .interactive-table th,
-        .interactive-table td {
-            padding: 12px 8px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        .interactive-table th {
-            background-color: #3e2a1f;
-            color: #fff;
-        }
-
-        .interactive-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .interactive-table tr:hover {
-            background-color: #ddd;
-        }
-
-        .images {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .product-iframe {
-            width: 100%;
-            max-width: 300px;
-            height: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .note {
-            background-color: #fff;
-            padding: 20px 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-cacao {
-            background-color: #3e2a1f;
-            color: #fff;
-            padding: 20px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            display: inline-block;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-cacao:hover {
-            background-color: #2c1e14;
-        }
-
-        .container2 {
-            text-align: center;
-        }
-
-        @media (max-width: 350px) {
-            .section-title {
-                font-size: 20px;
-            }
-
-            .expandable-header {
-                padding: 10px 5px;
-                margin-top: 20px
-            }
-
-            .expandable-content {
-                padding: 15px 5px;
-            }
-
-            .interactive-table th,
-            .interactive-table td {
-                padding: 10px 5px;
-                font-size: 12px;
-            }
-
-            .interactive-table th {
-                font-size: 14px;
-            }
-
-            .note {
-                padding: 15px 5px;
-            }
-
-            .btn-cacao {
-                padding: 15px 10px;
-                font-size: 14px;
-            }
-
-            .product-iframe {
-                height: 200px;
-            }
-        }
-    </style>
-    <script>
-        function toggleExpandable(element) {
-            const content = element.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        }
-    </script>
-</head>
-
-<body>
-    <div class="side-decor left"></div>
-    <div class="container">
-        <div class="expandable-section">
-            <div class="expandable-header" onclick="toggleExpandable(this)">
-                <span>Vista General del Producto</span>
-                <span>&#x25BC;</span>
-            </div>
-            <div class="expandable-content">
-                <h2>Descripción del Producto</h2>
-                <p>Nuestro Cacao se distingue por su calidad premium y sus características excepcionales, diseñadas para
-                    cumplir con los más altos estándares del mercado.</p>
-            </div>
-        </div>
-
-        <div class="section-title">Características</div>
-        <table class="interactive-table">
-            <thead>
-                <tr>
-                    <th>Características</th>
-                    <th>Parámetro</th>
-                    <th>Especificación</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><b>Sensorial</b></td>
-                    <td>Fragancia y Aroma</td>
-                    <td>Hierbas / Semillas</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Sabor</td>
-                    <td>Cítricos, chocolate y durazno</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Sabor Residual</td>
-                    <td>Dulce, ligeramente seco y ácido</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Calidad de taza</td>
-                    <td>83 - 86 puntos</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Cuerpo</td>
-                    <td>Suave</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Olor</td>
-                    <td>Característico a café</td>
-                </tr>
-                <tr>
-                    <td><b>Físicas</b></td>
-                    <td>Humedad</td>
-                    <td>Máx. 12.00</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Rendimiento</td>
-                    <td>90 %</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Fermentación</td>
-                    <td>Ausencia</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Acidez</td>
-                    <td>Media</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="section-title">Fotos del Producto</div>
-        <div class="images">
-            <iframe title="Coffee beans" frameborder="0" allowfullscreen mozallowfullscreen="true"
-                webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                execution-while-out-of-viewport execution-while-not-rendered web-share
-                src="https://sketchfab.com/models/8146e99925fb4b49839e4fa7ace83f0f/embed?autospin=1&autostart=1&preload=1&transparent=1">
-            </iframe>
-
-            <iframe title="Burlap Sacks of Coffee Beans" frameborder="0" allowfullscreen mozallowfullscreen="true"
-                webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                execution-while-out-of-viewport execution-while-not-rendered web-share
-                src="https://sketchfab.com/models/fdc3edf4e66d49d7ad603c6c35953fb5/embed?autospin=1&autostart=1&preload=1&transparent=1">
-            </iframe>
-        </div>
-
-        <div class="section-title">Empaque y Embalaje</div>
-        <table class="interactive-table">
-            <thead>
-                <tr>
-                    <th>Empaque</th>
-                    <th>Tipo</th>
-                    <th>Material</th>
-                    <th>Capacidad</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Primario</td>
-                    <td>Saco y/o bolsa de polipropileno</td>
-                    <td>Yute</td>
-                    <td>25 kg</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="section-title">Almacenamiento</div>
-        <p class="note">
-            Conservar en un lugar seco, limpio y ventilado, no dejar a la intemperie. No almacenar cerca de otras
-            sustancias químicas (combustibles, pinturas, etc.).
-        </p>
-
-        <div class="section-title">Vida Útil</div>
-        <p class="note">
-            Manteniendo las condiciones de almacenamiento establecidas: 06 meses.
-        </p>
-        <div class="container2">
-            <a href="index.html"><button class="btn-cacao">Listo</button></a>
-        </div>
-    </div>
-</body>
-
 </html>
