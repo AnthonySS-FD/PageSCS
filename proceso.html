@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso del Cacao</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.pixabay.com/photo/2023/07/27/13/08/cocoa-8153358_1280.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            overflow-x: hidden;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.4);
+            text-align: center;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #b49a7d;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            transition: color 0.3s ease, font-size 0.3s ease;
+        }
+
+        h1:hover {
+            color: #593d1f;
+            font-size: 34px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(247, 243, 235, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .step.show {
+            opacity: 0.9;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            opacity: 1;
+        }
+
+        .step h2 {
+            color: #593d1f;
+            font-size: 24px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .step h2 i {
+            margin-right: 10px;
+        }
+
+        .step img {
+            width: 90%;
+            height: auto;
+            max-width: 90%;
+            border-radius: 8px;
+            transition: transform 0.4s ease-in-out, filter 0.4s, border 0.4s;
+            filter: brightness(0.95);
+            border: 4px solid transparent;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .step img:hover {
+            transform: scale(1.05);
+            filter: brightness(1);
+            border: 4px solid #aa6a26;
+        }
+
+        .step p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .step .details {
+            display: none;
+            margin-top: 10px;
+            background: rgba(255, 248, 225, 0.9);
+            border: 1px solid #d0b48f;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.4s ease, max-height 0.4s ease, padding 0.4s ease;
+            opacity: 0;
+            max-height: 0;
+        }
+
+        .step .details.open {
+            display: block;
+            opacity: 1;
+            max-height: 1000px;
+        }
+
+        .step .toggle-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            font-size: 16px;
+            color: #fff;
+            background: #593d1f;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .step .toggle-button:hover {
+            background: #8a6b3a;
+            transform: scale(1.05);
+        }
+
+        .step .toggle-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Barra de progreso */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 7px;
+            background: #593d1f;
+            z-index: 999;
+        }
+
+        .progress-bar span {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: #b49a7d;
+            transition: width 0.2s ease;
+        }
+
+        /* Carrusel de imágenes */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            margin-top: 70px;
+            height: auto;
+          
+           
+        }
+
+        .carousel img {
+            content: normal;
+            width: 100%;
+           height: auto
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+
+        .carousel-button.left {
+            left: 10px;
+        }
+
+        .carousel-button.right {
+            right: 10px;
+        }
+
+        /* Medios Responsivos */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .step {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .carousel img {
+                width: 100%;
+            }
+        }
+        
+        .container2 {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+  }
+    
+        .exit-button {
+    background: linear-gradient(45deg, #6B8E23, #556B2F); /* Gradiente inspirado en hojas y naturaleza */
+    color: #FFFFFF; /* Texto blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px; /* Bordes completamente redondeados */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    justify-content: center;
+  }
+
+  .exit-button:hover {
+    background: linear-gradient(45deg, #556B2F, #6B8E23); /* Cambia dirección del gradiente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  }
+
+  .exit-button:active {
+    transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+    </style>
+</head>
+<body>
+    
+    <!-- Barra de progreso -->
+    <div class="progress-bar">
+        <span id="progress"></span>
+    </div>
+
+    <div class="container">
+        <h1>Proceso del Cacao</h1>
+
+        
+
+        <div class="step show">
+            <h2><i class="fas fa-seedling"></i>1. Siembra</h2>
+            <img src="https://cdn.pixabay.com/photo/2021/04/04/20/30/plant-6151414_960_720.jpg" alt="Siembra de cacao">
+            <p>Seleccionamos las mejores semillas de cacao y preparamos terrenos óptimos para su desarrollo.</p>
+            <button class="toggle-button" onclick="toggleDetails(this)">Ver más detalles</button>
+            <div class="details">En esta etapa, evaluamos el tipo de suelo, la altitud y las condiciones climáticas ideales para garantizar un crecimiento exitoso de las plantas de cacao.</div>
+        </div>
+
+        <div class="step show">
+            <h2><i class="fas fa-crop"></i>2. Cosecha</h2>
+            <img src="https://cdn.pixabay.com/photo/2014/09/19/19/13/cocoa-452911_960_720.jpg" alt="Cosecha de cacao">
+            <p>Recolectamos las mazorcas maduras cuidadosamente para preservar su calidad.</p>
+            <button class="toggle-button" onclick="toggleDetails(this)">Ver más detalles</button>
+            <div class="details">La cosecha manual asegura que cada mazorca se recolecte en el punto óptimo de madurez, preservando las propiedades del grano.</div>
+        </div>
+
+        <div class="step show">
+            <h2><i class="fas fa-flask"></i>3. Fermentación</h2>
+            <img src="https://cdn.pixabay.com/photo/2022/02/08/18/00/roasted-cocoa-beans-7001846_960_720.jpg" alt="Fermentación del cacao">
+            <p>Las semillas se fermentan en cajas de madera, desarrollando su aroma y sabor únicos.</p>
+            <button class="toggle-button" onclick="toggleDetails(this)">Ver más detalles</button>
+            <div class="details">La fermentación permite que las enzimas actúen sobre las semillas, eliminando el amargor y desarrollando complejos perfiles aromáticos y sabores característicos del cacao de alta calidad.</div>
+        </div>
+
+        <div class="step show">
+            <h2><i class="fas fa-sun"></i>4. Secado</h2>
+            <img src="https://cdn.pixabay.com/photo/2017/06/21/14/57/cocoa-2427493_960_720.jpg" alt="Secado de cacao">
+            <p>Las semillas fermentadas se secan al sol para alcanzar la humedad ideal.</p>
+            <button class="toggle-button" onclick="toggleDetails(this)">Ver más detalles</button>
+            <div class="details">El secado natural asegura una textura uniforme, evita contaminaciones y preserva las características organolépticas del cacao.</div>
+        </div>
+
+        <div class="step show">
+            <h2><i class="fas fa-ship"></i>5. Exportación</h2>
+            <img src="https://cdn.pixabay.com/photo/2015/01/11/10/28/container-ship-596083_1280.jpg" alt="Exportación de cacao">
+            <p>El cacao seco se empaqueta cuidadosamente para su transporte a mercados internacionales.</p>
+            <button class="toggle-button" onclick="toggleDetails(this)">Ver más detalles</button>
+            <div class="details">Empaques especializados mantienen las propiedades organolépticas y la frescura del cacao durante su transporte, asegurando la calidad hasta el destino final.</div>
+        </div>
+
+        <div class="container2">
+        <a href="index.html"><button class="exit-button">Listo</button></a>
+        </div>
+    
+    </div>
+
+
+    <!-- Carrusel de imágenes 
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="https://cdn.pixabay.com/photo/2022/02/21/13/58/cocoa-7026841_1280.jpg" alt="Siembra de cacao">
+            <img src="https://cdn.pixabay.com/photo/2015/01/11/10/28/container-ship-596083_1280.jpg" alt="Cosecha de cacao">
+            <img src="https://cdn.pixabay.com/photo/2017/06/20/07/16/cocoa-2422040_1280.jpg" alt="Fermentación del cacao">
+            <img src="https://cdn.pixabay.com/photo/2016/05/30/03/49/cocoa-pods-1424219_960_720.jpg" alt="Secado de cacao">
+            <img src="https://cdn.pixabay.com/photo/2017/06/22/10/01/hands-2430200_1280.jpg" alt="Exportación de cacao">
+        </div>
+        <button class="carousel-button left" onclick="moveCarousel('left')">‹</button>
+        <button class="carousel-button right" onclick="moveCarousel('right')">›</button>
+    </div>
+    -->
+
+    
+
+    <script>
+        // Barra de progreso
+        window.addEventListener('scroll', function () {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPos = window.scrollY;
+            const progress = (scrollPos / docHeight) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        });
+
+        // Mover el carrusel
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const track = document.querySelector('.carousel-track');
+            const totalImages = document.querySelectorAll('.carousel img').length;
+            if (direction === 'left') {
+                currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+            } else {
+                currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+            }
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Toggle details
+        function toggleDetails(button) {
+            const details = button.nextElementSibling;
+            details.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
