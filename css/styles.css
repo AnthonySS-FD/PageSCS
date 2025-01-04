@@ -104,6 +104,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -599,6 +600,7 @@ progress {
 .img-fluid {
   max-width: 100%;
   height: auto;
+  border-radius: 15px 15px 0 0 ;
 }
 
 .img-thumbnail {
@@ -11372,15 +11374,16 @@ section#contact form#contactForm :-ms-input-placeholder {
 .interactive-button {
   background: linear-gradient(45deg, #8B4513, #0c4128); /* Gradiente atractivo */
   color: white;
-  padding: 12px 24px;
+  padding: 12px 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  margin: 0 8px;
 }
 
 .interactive-button:hover {
@@ -11500,4 +11503,20 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .modern-button:active {
   transform: scale(0.95); /* Pequeña reducción al presionar */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);}
+
+  .scroll-effect {
+    opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.8s ease;
+  }
+
+  .scroll-effect.visible {
+    opacity: 1;
+  transform: translateY(0) scale(1);
+  }
+  .disp{
+    display: block;
+  }
+
+  
