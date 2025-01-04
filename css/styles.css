@@ -673,6 +673,7 @@ progress {
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
+  justify-content: center;
 }
 .row > * {
   flex-shrink: 0;
@@ -1112,9 +1113,9 @@ progress {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
-   .col-md-4 img{
-    width: 280px ;
-    height: 160px ;
+  .col-md-4 img{
+    width: 220px ;
+    height: 270px ;
   }
   .col-md-5 {
     flex: 0 0 auto;
@@ -10886,7 +10887,7 @@ p {
   justify-content: center;
   padding: 0;
   border-radius: 100%;
-  color:deepskyblue;
+  color:#bf9600;
 
 }
 
@@ -10894,6 +10895,7 @@ p {
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: #212529;
+  opacity: 0.95;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10910,13 +10912,14 @@ p {
   text-transform: uppercase;
 }
 #mainNav .navbar-brand img {
-  height: 1.5rem;
+  height: 4.5rem;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #fff;
   letter-spacing: 0.0625em;
+  font-weight: 500;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
   color: #ffc800;
@@ -10935,7 +10938,7 @@ p {
     transition: font-size 0.3s ease-in-out;
   }
   #mainNav .navbar-brand img {
-    height: 4.5rem;
+    height: 9.5rem;
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
@@ -10948,7 +10951,7 @@ p {
   }
   #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
-    height: 2.5rem;
+    height: 4.5rem;
   }
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
@@ -10958,8 +10961,8 @@ p {
   }
 }
 header.masthead {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
+  padding-top: 20rem;
+        padding-bottom: 20rem;
   text-align: center;
   color: #fff;
   background-image: url("https://scsexport.com/wp-content/uploads/2024/01/1.jpg");
@@ -10967,6 +10970,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -10988,8 +10992,8 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+    padding-top: 25rem;
+        padding-bottom: 20rem;
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
@@ -11006,11 +11010,7 @@ header.masthead .masthead-heading {
     
   }
 }
-#portfolio .portfolio-item {
-  max-width: 26rem;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
   display: block;
@@ -11038,7 +11038,14 @@ header.masthead .masthead-heading {
   padding: 1.5rem;
   text-align: center;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 15px 15px 15px 15px;
+}
+#portfolio .portfolio-item {
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.5);
 }
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
   font-size: 1.5rem;
@@ -11329,13 +11336,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
 }
-.fa-stack {
-    display: inline-block;
-    vertical-align: middle;
-    height: 1.5em;
-    position: relative;
-    width: 2.5em;
-}
 
 .footer {
   background: #000;
@@ -11344,3 +11344,160 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: white;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2.5em;
+  position: relative;
+  width: 2.1em;
+}
+
+.btn-agricultores {
+  background-color: #3e2a1f;
+  color: #fff;
+  padding: 20px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.interactive-button {
+  background: linear-gradient(45deg, #8B4513, #0c4128); /* Gradiente atractivo */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.interactive-button:hover {
+  background: linear-gradient(45deg,  #0c4128, #8B4513); /* Cambia dirección del gradiente */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px); /* Efecto flotante */
+}
+
+.interactive-button:active {
+  transform: translateY(1px); /* Efecto de clic */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.innovative-button {
+  color:#babbbc; /* Texto blanco */
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 3px solid; /* Borde degradado */
+  border-image-slice: 1;
+  border-radius: 50px; /* Forma de píldora */
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  margin-top: 10px;
+}
+
+.innovative-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: all 0.4s ease-in-out;
+  transform: skewX(-45deg);
+}
+
+.innovative-button:hover::before {
+  left: 100%;
+}
+
+.innovative-button:hover {
+  color: #8B4513; /* Texto cambia a dorado */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+}
+
+.container2{
+  display:contents;
+  justify-content: center;
+  align-items: center;
+ 
+
+}
+
+.pluss{
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.pluss2{
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.modern-button {
+  position: relative;
+  background: linear-gradient(45deg, #8B4513, #A0522D); /* Gradiente cacao */
+  color: #FFFFFF;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  margin: 30px  auto 20px auto;
+}
+
+.modern-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.modern-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modern-button:hover {
+  color: #bf9600; /* Texto cambia a dorado */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px); /* Efecto flotante */
+}
+
+.modern-button span {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.modern-button:hover span {
+  transform: translateY(-5px) rotate(-5deg); /* Movimiento del texto */
+  color: #FFE4B5; /* Texto más claro */
+}
+
+.modern-button:active {
+  transform: scale(0.95); /* Pequeña reducción al presionar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
