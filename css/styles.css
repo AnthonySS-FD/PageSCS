@@ -10967,7 +10967,7 @@ header.masthead {
         padding-bottom: 20rem;
   text-align: center;
   color: #fff;
-  background-image: url("https://scsexport.com/wp-content/uploads/2024/01/1.jpg");
+  background-image: url("https://scsexport.com/wp-content/uploads/2024/01/CAFE-EN_GRANO_VERDE.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11012,7 +11012,107 @@ header.masthead .masthead-heading {
     
   }
 }
+header.masthead .masthead-subheading {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-style: italic;
+  line-height: 3.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: bounceIn 1s ease-out;
+}
 
+header.masthead .masthead-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 4.5rem;
+  margin-bottom: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideInUp 1s ease-out 0.5s both;
+}
+
+header.masthead .btn-primary {
+  animation: fadeInUp 1s ease-out 1s both;
+  font-size: 1.2rem;
+  padding: 1.25rem 2.5rem;
+}
+
+/* Animaciones */
+@keyframes bounceIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(-100px);
+  }
+  50% {
+      opacity: 0.8;
+      transform: scale(1.1);
+  }
+  70% {
+      opacity: 0.9;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(100px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  header.masthead .masthead-subheading {
+      font-size: 2rem;
+      line-height: 2.2rem;
+      margin-bottom: 1.5rem;
+  }
+
+  header.masthead .masthead-heading {
+      font-size: 2.5rem;
+      line-height: 2.8rem;
+      margin-bottom: 2rem;
+  }
+
+  header.masthead .btn-primary {
+      font-size: 1rem;
+      padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header.masthead .masthead-subheading {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+  }
+
+  header.masthead .masthead-heading {
+      font-size: 2rem;
+      line-height: 2.2rem;
+  }
+}
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
   display: block;
@@ -11519,4 +11619,266 @@ section#contact form#contactForm :-ms-input-placeholder {
     display: block;
   }
 
-  
+ /* Estilos para la sección de clientes */
+.client-slider {
+    overflow: hidden;
+    padding: 40px 0;
+    background: #f8f9fa;
+    position: relative;
+}
+
+.clients-container {
+    display: flex;
+    gap: 40px;
+    width: fit-content;
+    animation: scrollInfinite 25s linear infinite;
+}
+
+.client-item {
+    flex: 0 0 auto;
+    width: 150px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.client-item:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.client-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% / 3)); /* Solo se mueve un tercio ya que tenemos tres conjuntos */
+    }
+}
+
+/* Efecto de desvanecimiento en los bordes */
+.client-slider::before,
+.client-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.client-slider::before {
+    left: 0;
+    background: linear-gradient(to right, #f8f9fa 0%, transparent 100%);
+}
+
+.client-slider::after {
+    right: 0;
+    background: linear-gradient(to left, #f8f9fa 0%, transparent 100%);
+}
+
+/* Pausar animación en hover */
+.clients-container:hover {
+    animation-play-state: paused;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .client-item {
+        width: 100px;
+    }
+    
+    .client-slider::before,
+    .client-slider::after {
+        width: 10%;
+    }
+}
+
+
+/* Estilos base para la sección de testimonios */
+.testimonials-container {
+  position: relative;
+  height: 450px; /* Altura base */
+  perspective: 1000px;
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.testimonial-card {
+  position: absolute;
+  width: calc(100% - 40px); /* Ajuste para el padding */
+  height: auto; /* Altura automática */
+  min-height: 300px;
+  opacity: 0;
+  transform: translateX(100%) rotateY(60deg);
+  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 30px;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonial-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  border: 3px solid #fed136;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-card h4 {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.testimonial-card .position {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.testimonial-card .quote {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Estados de las tarjetas */
+.testimonial-card.active {
+  opacity: 1;
+  transform: translateX(0) rotateY(0);
+  visibility: visible;
+  z-index: 3;
+}
+
+.testimonial-card.prev {
+  opacity: 0.7;
+  transform: translateX(-30%) rotateY(-10deg) scale(0.9);
+  visibility: visible;
+  z-index: 2;
+}
+
+.testimonial-card.next {
+  opacity: 0.7;
+  transform: translateX(30%) rotateY(10deg) scale(0.9);
+  visibility: visible;
+  z-index: 1;
+}
+
+/* Controles */
+.testimonial-controls {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 4;
+}
+
+.control-btn {
+  background: none;
+  border: 2px solid #fed136;
+  color: #fed136;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1em;
+}
+
+.control-btn:hover {
+  background: #fed136;
+  color: white;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .testimonials-container {
+      height: 500px;
+      padding: 0 10px;
+      perspective: none;
+  }
+
+  .testimonial-card {
+      width: calc(100% - 20px);
+      padding: 15px;
+      min-height: 350px;
+  }
+
+  .testimonial-card.prev,
+  .testimonial-card.next {
+      opacity: 0;
+      transform: translateX(0) scale(0.8);
+      visibility: hidden;
+  }
+
+  .testimonial-content {
+      padding: 10px;
+  }
+
+  .testimonial-image {
+      width: 60px;
+      height: 60px;
+  }
+
+  .testimonial-card h4 {
+      font-size: 1.1em;
+  }
+
+  .testimonial-card .position {
+      font-size: 0.8em;
+  }
+
+  .testimonial-card .quote {
+      font-size: 0.9em;
+  }
+
+  .control-btn {
+      padding: 6px 12px;
+      font-size: 0.9em;
+  }
+}
+
+/* Media Queries para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .testimonials-container {
+      height: 550px;
+  }
+
+  .testimonial-card {
+      min-height: 400px;
+  }
+
+  .testimonial-content {
+      padding: 5px;
+  }
+
+  .testimonial-card .quote {
+      font-size: 0.85em;
+      line-height: 1.4;
+  }
+}
