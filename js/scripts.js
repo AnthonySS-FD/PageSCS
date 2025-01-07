@@ -52,3 +52,49 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
+    
+    // Función para verificar si todos los campos están llenos
+    function checkFormValidity() {
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+            }
+            if (input.type === 'email' && !isValidEmail(input.value)) {
+                isValid = false;
+            }
+        });
+        submitButton.disabled = !isValid;
+    }
+
+    // Validar email
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Escuchar cambios en todos los inputs
+    inputs.forEach(input => {
+        input.addEventListener('input', checkFormValidity);
+        input.addEventListener('blur', checkFormValidity);
+    });
+
+    // Manejar el envío del formulario
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            return;
+        }
+
+        // Deshabilitar el botón durante el envío
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Enviando...';
+
+        // El formulario se enviará a Formspree
+        // Después del envío, Formspree redirigirá o mostrará su mensaje de éxito
+    });
+});
