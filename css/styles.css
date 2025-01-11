@@ -90,6 +90,9 @@
     scroll-behavior: smooth;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -10855,6 +10858,7 @@ p {
 
 .page-section {
   padding: 6rem 0;
+  
 }
 .page-section h2.section-heading, .page-section .section-heading.h2 {
   font-size: 2.5rem;
@@ -10964,7 +10968,7 @@ p {
 }
 header.masthead {
   padding-top: 20rem;
-        padding-bottom: 20rem;
+  padding-bottom: 20rem;
   text-align: center;
   color: #fff;
   background-image: url("https://scsexport.com/wp-content/uploads/2024/01/CAFE-EN_GRANO_VERDE.jpg");
@@ -10972,7 +10976,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  
+  height: 100vh;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -10994,7 +10998,7 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 25rem;
+        padding-top: 22rem;
         padding-bottom: 20rem;
   }
   header.masthead .masthead-subheading {
@@ -11704,11 +11708,12 @@ section#contact form#contactForm :-ms-input-placeholder {
 /* Estilos base para la sección de testimonios */
 .testimonials-container {
   position: relative;
-  height: 450px; /* Altura base */
+  height: 330px; /* Altura base */
   perspective: 1000px;
-  margin: 40px auto;
+  margin: 40px auto;  
   max-width: 800px;
   padding: 0 20px;
+  
 }
 
 .testimonial-card {
