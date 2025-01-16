@@ -375,3 +375,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     });
 });
+// Funciones para el modal
+function openContactModal() {
+    document.getElementById('contactModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeContactModal() {
+    document.getElementById('contactModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar modal al hacer clic fuera de él
+window.onclick = function(event) {
+    const modal = document.getElementById('contactModal');
+    if (event.target == modal) {
+        closeContactModal();
+    }
+}
+
