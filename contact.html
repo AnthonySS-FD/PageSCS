@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - SCS Export</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- AOS CSS para animaciones al scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Sweet Alert 2 -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- Sweet Alert 2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+
+    <style>
+      :root {
+        --primary-color: #00A67E; /* Azul profesional en lugar del amarillo */
+        /* O si prefieres otros tonos profesionales podrías usar:
+        --primary-color: #3498db; /* Azul más claro */
+        /* --primary-color: #2c3e50; /* Azul oscuro elegante */
+        /* --primary-color: #34495e; /* Gris azulado */
+        --secondary-color: #212529;
+        --text-color: #6c757d;
+        --white: #ffffff;
+        --light-bg: #f8f9fa;
+        --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        --hover-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+        /* Hero Section con parallax */
+        .hero-section {
+            background: linear-gradient(rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.7)),
+                        url('assets/img/header-bg.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+     
+    body {
+    /* O si prefieres un patrón sutil */
+     background-color: #f5f7fa;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e4e7eb' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); 
+    }
+        /* Info Cards */
+        .info-cards {
+            margin-top: -100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), transparent);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Formulario */
+        .contact-form-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .form-floating .form-control {
+            border: 2px solid var(--input-border);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+        }
+
+        .form-floating .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(254, 209, 54, 0.15);
+            background-color: var(--white);
+        }
+
+        .form-label-floating {
+            color: var(--text-color);
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-submit:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Mapa */
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            min-height: 450px;
+            transition: all 0.3s ease;
+        }
+
+        .map-container:hover {
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            padding: 1.5rem;
+            font-weight: 600;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Animaciones de carga */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        /* Loading spinner para el botón */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Validación visual */
+        .form-control.is-valid {
+            border-color: #28a745;
+            background-image: url("data:image/svg+xml,...");
+        }
+
+        .form-control.is-invalid {
+            border-color: #dc3545;
+            background-image: url("data:image/svg+xml,...");
+        }
+
+        /* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 180px; /* Cambiado de 30px a 100px para elevarlo */
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.whatsapp-float .tooltip {
+    position: absolute;
+    right: 70px;
+    background-color: #333;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.whatsapp-float:hover .tooltip {
+    opacity: 1;
+    right: 75px;
+}
+.btn-return {
+    position: fixed;
+    top: 100px; /* Ajusta según la altura de tu navbar */
+    left: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.btn-return:hover {
+    transform: translateX(-5px);
+    color: white;
+    box-shadow: var(--hover-shadow);
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+    .btn-return {
+        top: auto;
+        bottom: 180px; /* Ajusta según necesites */
+        left: 30px;
+    }
+}
+
+
+
+/* Estilos para el footer */
+.footer {
+    background-color: var(--secondary-color);
+    padding: 4rem 0;
+    margin-top: 4rem;
+    color: white;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer .btn-social {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.footer .link-dark {
+    color: #ffffff80;
+}
+
+.footer .link-dark:hover {
+    color: white;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 180px; /* Aumentado para que esté más arriba */
+    right: 30px;
+    z-index: 99;
+}
+
+/* Asegúrate de que el iframe de Tawk.to esté más arriba */
+#tawk-to-iframe {
+    margin-bottom: 180px !important;
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Contactanos</h1>
+            <p>Estamos aquí para ayudarte en lo que necesites</p>
+        </div>
+    </section>
+
+    <!-- Info Cards -->
+    <section class="info-cards">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Llámanos</h3>
+                        <p>+51 997 001 233</p>
+                        <p>Lun-Vie: 9:00-18:00</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Escríbenos</h3>
+                        <p>contacto@scsexport.com</p>
+                        <p>Respuesta en 24h</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Visítanos</h3>
+                        <p>Av. Principal 123</p>
+                        <p>Lima, Perú</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-form-container">
+                        <h2 class="text-center mb-4">Envíanos un mensaje</h2>
+                        <form id="contactForm" action="https://formspree.io/f/xlddoknp" method="POST">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="name">Nombre completo</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <label for="email">Correo electrónico</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-control" id="subject" name="subject" required>
+                                    <option value="">Selecciona un tema</option>
+                                    <option value="comercial">Consulta comercial</option>
+                                    <option value="soporte">Soporte técnico</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                                <label for="subject">Asunto</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" name="message" style="height: 150px" required></textarea>
+                                <label for="message">Tu mensaje</label>
+                            </div>
+                            <button type="submit" class="btn btn-submit w-100">
+                                Enviar mensaje
+                                <i class="fas fa-paper-plane ms-2"></i>
+                                <div class="spinner"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.964560140787!2d-77.03196518561798!3d-12.046654545145844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b5d35662c7%3A0x45c5d615d8e69f89!2sPlaza%20Mayor%20de%20Lima!5e0!3m2!1ses!2spe!4v1645564565650!5m2!1ses!2spe"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Preguntas Frecuentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            ¿Cuál es el tiempo de respuesta?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Normalmente respondemos en menos de 24 horas hábiles.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            ¿Cuáles son los horarios de atención?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nuestro horario de atención es de lunes a viernes de 9:00 AM a 6:00 PM.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            ¿Cómo puedo agendar una reunión?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Puedes agendar una reunión a través de nuestro formulario de contacto o llamándonos directamente.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Botón de regreso -->
+<a href="index.html" class="btn-return">
+    <i class="fas fa-arrow-left"></i> Volver al Inicio
+</a>
+    <!-- Footer-->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">
+                <img src="https://scsexport.com/wp-content/uploads/2023/06/Recurso-2scs-1.png" alt="SCS Export" height="50">
+                <p class="mt-3">Expertos en exportación e importación</p>
+            </div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a class="link-dark text-decoration-none me-3" href="#!">Política de Privacidad</a>
+                <a class="link-dark text-decoration-none" href="#!">Términos de Uso</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+// Validación del formulario
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Mostrar spinner
+    const button = this.querySelector('button[type="submit"]');
+    const spinner = button.querySelector('.spinner');
+    button.disabled = true;
+    spinner.style.display = 'inline-block';
+
+    // Envío del formulario usando FormSpree
+    const formData = new FormData(this);
+    fetch("https://formspree.io/f/xlddoknp", {
+        method: "POST",
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Mostrar mensaje de éxito
+            Swal.fire({
+                title: '¡Éxito!',
+                text: 'Tu mensaje ha sido enviado correctamente',
+                icon: 'success',
+                confirmButtonColor: '#fed136'
+            });
+            this.reset();
+        } else {
+            throw new Error('Error en el envío');
+        }
+    })
+    .catch(error => {
+        Swal.fire({
+            title: 'Error',
+            text: 'Hubo un problema al enviar el mensaje. Por favor, inténtalo de nuevo.',
+            icon: 'error',
+            confirmButtonColor: '#fed136'
+        });
+    })
+    .finally(() => {
+        // Ocultar spinner
+        button.disabled = false;
+        spinner.style.display = 'none';
+    });
+});
+
+        // Validación en tiempo real
+        const inputs = document.querySelectorAll('.form-control');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.checkValidity()) {
+                    this.classList.add('is-valid');
+                    this.classList.remove('is-invalid');
+                } else {
+                    this.classList.add('is-invalid');
+                    this.classList.remove('is-valid');
+                }
+            });
+        });
+    </script>
+
+        <a href="https://wa.me/51997001233" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">¿Necesitas ayuda?</span>
+        </a>
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/678963b33a84273260705411/1ihoaqt4r';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+            </script>
+        <!--End of Tawk.to Script-->
+</body>
+</html>
