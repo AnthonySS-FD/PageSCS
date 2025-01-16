@@ -15,12 +15,19 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" /> 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <!-- Añade esto en el head de tu HTML -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.js"></script>
+       <!-- Sweet Alert 2 -->
+<!-- En el head -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body id="page-top">
@@ -38,10 +45,9 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <!--<li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Sedes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#locations">Sedes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#clients">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -60,72 +66,106 @@
     <!-- Portfolio Grid-->
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
-            <div class="text-center scroll-effect">
+            <div class="text-center scroll-reveal fade-up scroll-effect">
                 <h2 class="section-heading text-uppercase">Nuestros Productos</h2>
                 <h3 class="section-subheading text-muted">Trabajamos arduamente para entregar los mejores productos del
                     Perú al mundo.</h3>
             </div>
-            <div class="row">
+            <div class="row portfolio-grid">
+                <!-- Portfolio item 1-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 1-->
-                    <div class="portfolio-item scroll-effect">
+                    <div class="portfolio-item scroll-effect slide-up">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content">
+                                    <i class="fas fa-plus fa-3x pulse"></i>
+                                </div>
                             </div>
-                            <img class="img-fluid"
-                                src="https://scsexport.com/wp-content/uploads/2023/06/cacao-1024x538-1.png" alt="..." />
+                            <img class="img-fluid hover-zoom"
+                                src="https://scsexport.com/wp-content/uploads/2023/06/cacao-1024x538-1.png"
+                                alt="Cacao" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Cacao</div>
                             <div class="portfolio-caption-subheading text-muted">Ucayali</div>
-                            <a href="fichatecnica-cacao.html"><button class="innovative-button">Ficha
-                                    Técnica</button></a>
-                            <a href="proceso.html"><button class="innovative-button">Nuestro Proceso</button></a>
+                            <div class="button-group">
+                                <a href="fichatecnica-cacao.html" class="innovative-button">
+                                    <span class="button-text">Ficha Técnica</span>
+                                    <span class="button-icon"><i class="fas fa-file-alt"></i></span>
+                                </a>
+                                <a href="proceso.html" class="innovative-button">
+                                    <span class="button-text">Nuestro Proceso</span>
+                                    <span class="button-icon"><i class="fas fa-cogs"></i></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Portfolio item 2-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 2-->
-                    <div class="portfolio-item scroll-effect">
+                    <div class="portfolio-item scroll-effect slide-up">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content">
+                                    <i class="fas fa-plus fa-3x pulse"></i>
+                                </div>
                             </div>
-                            <img class="img-fluid" src="https://scsexport.com/wp-content/uploads/2024/01/CAFE_VERDE.jpg"
-                                alt="..." />
+                            <img class="img-fluid hover-zoom"
+                                src="https://scsexport.com/wp-content/uploads/2024/01/CAFE_VERDE.jpg" alt="Café" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Café</div>
-                            <div class="portfolio-caption-subheading text-muted">Amazonas, Cajamarca and Junín </div>
-                            <a href="fichatecnica-cafe.html"><button class="innovative-button">Ficha Técnica</button></a>
-                            <a href="proceso.html"><button class="innovative-button">Nuestro Proceso</button></a>
+                            <div class="portfolio-caption-subheading text-muted">Amazonas, Cajamarca and Junín</div>
+                            <div class="button-group">
+                                <a href="fichatecnica-cafe.html" class="innovative-button">
+                                    <span class="button-text">Ficha Técnica</span>
+                                    <span class="button-icon"><i class="fas fa-file-alt"></i></span>
+                                </a>
+                                <a href="proceso.html" class="innovative-button">
+                                    <span class="button-text">Nuestro Proceso</span>
+                                    <span class="button-icon"><i class="fas fa-cogs"></i></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Portfolio item 3-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <!--  Portfolio item 3-->
-                    <div class="portfolio-item scroll-effect">
+                    <div class="portfolio-item scroll-effect slide-up">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
                             <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-hover-content">
+                                    <i class="fas fa-plus fa-3x pulse"></i>
+                                </div>
                             </div>
-                            <img class="img-fluid"
+                            <img class="img-fluid hover-zoom"
                                 src="https://scsexport.com/wp-content/uploads/2024/07/PlatanosVerdesBarranquilla-e1722441762871-768x420.jpg"
-                                alt="..." />
+                                alt="Plátano" />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Platano Beyaco</div>
                             <div class="portfolio-caption-subheading text-muted">Aguaytía- Ucayali</div>
-                            <a href="fichatecnica-platano.html"><button class="innovative-button">Ficha Técnica</button></a>
-                            <a href="proceso.html"><button class="innovative-button">Nuestro Proceso</button></a>
+                            <div class="button-group">
+                                <a href="fichatecnica-platano.html" class="innovative-button">
+                                    <span class="button-text">Ficha Técnica</span>
+                                    <span class="button-icon"><i class="fas fa-file-alt"></i></span>
+                                </a>
+                                <a href="proceso.html" class="innovative-button">
+                                    <span class="button-text">Nuestro Proceso</span>
+                                    <span class="button-icon"><i class="fas fa-cogs"></i></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
 
-                <!--     Portfolio item 4
+
+        <!--     Portfolio item 4
                    <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
                             <div class="portfolio-hover">
@@ -169,7 +209,7 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+        </div>
         </div>
     </section>
 
@@ -179,15 +219,17 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase" data-aos="fade-down">Nuestras Sedes</h2>
-                <h3 class="section-subheading text-muted" data-aos="fade-up" data-aos-delay="100">Presencia estratégica en las principales regiones del Perú</h3>
+                <h3 class="section-subheading text-muted" data-aos="fade-up" data-aos-delay="100">Presencia estratégica
+                    en las principales regiones del Perú</h3>
             </div>
-            
+
             <div class="locations-grid">
                 <!-- Lima -->
                 <div class="location-card" data-aos="fade-up" data-aos-duration="1000">
                     <div class="card-inner">
                         <div class="location-image">
-                            <img src="https://scsexport.com/wp-content/uploads/elementor/thumbs/oficinas-scsexport-qi9bf60v2ximm223zknsb8c1c78u7nxzdihyr57ypc.png" alt="Sede Lima">
+                            <img src="https://scsexport.com/wp-content/uploads/elementor/thumbs/oficinas-scsexport-qi9bf60v2ximm223zknsb8c1c78u7nxzdihyr57ypc.png"
+                                alt="Sede Lima">
                             <div class="location-badge">Sede Principal</div>
                         </div>
                         <div class="location-preview">
@@ -198,7 +240,7 @@
                             <div class="info-content">
                                 <h3>Lima</h3>
                                 <div class="location-details">
-                                    
+
                                     <span><i class="fas fa-users"></i> 50+ empleados</span>
                                     <span><i class="fas fa-building"></i> Oficinas Centrales</span>
                                 </div>
@@ -213,14 +255,14 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Ucayali-Aguaytia -->
-                <div class="location-card" data-aos="fade-up"data-aos-duration="1000" data-aos-delay="200">
-                   
+                <div class="location-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+
                     <div class="card-inner">
                         <div class="location-image">
                             <img src="https://img.freepik.com/foto-gratis/plaza-ciudad_1359-564.jpg" alt="Sede Ucayali">
-                            
+
                         </div>
                         <div class="location-preview">
                             <h3>Ucayali-Aguaytia</h3>
@@ -244,13 +286,14 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- San Alejandro -->
                 <div class="location-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="card-inner">
                         <div class="location-image">
-                            <img src="https://img.freepik.com/foto-gratis/moderno-centro-negocios_1127-3157.jpg" alt="Sede San Alejandro">
-                            
+                            <img src="https://img.freepik.com/foto-gratis/moderno-centro-negocios_1127-3157.jpg"
+                                alt="Sede San Alejandro">
+
                         </div>
                         <div class="location-preview">
                             <h3>Ucayali-San Alejandro</h3>
@@ -279,60 +322,72 @@
     </section>
 
 
-    
-   <!-- Clients Section -->
-<section class="page-section bg-light" id="clients">
-    <div class="container scroll-effect">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Nuestros Principales Clientes</h2>
-            <h3 class="section-subheading text-muted">Empresas que confían en la calidad de nuestros productos.</h3>
-        </div>
-        
-        <div class="client-slider">
-            <div class="clients-container">
-                <!-- Grupo original -->
-                <div class="client-item">
-                    <img src="https://th.bing.com/th/id/OIP.sa1gQPGjFF_DPAhRvfnpwAHaHa?rs=1&pid=ImgDetMain" alt="Cliente 1" />
-                </div>
-                <div class="client-item">
-                    <img src="https://img.freepik.com/vector-premium/emblema-logotipo-carpinteria-silueta-vintage-hoja-sierra-circular-martillo-clavo-corte-madera_771881-18.jpg" alt="Cliente 2" />
-                </div>
-                <div class="client-item">
-                    <img src="https://static-cse.canva.com/blob/951786/1750logotiposqueteinspiraran.jpg" alt="Cliente 3" />
-                </div>
-                <div class="client-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1OXan3UlSF9fDSQ3jEn0b-Sh7vQ8d9sPVw&s" alt="Cliente 4" />
-                </div>
-                <!-- Primera duplicación -->
-                <div class="client-item">
-                    <img src="https://th.bing.com/th/id/OIP.sa1gQPGjFF_DPAhRvfnpwAHaHa?rs=1&pid=ImgDetMain" alt="Cliente 1" />
-                </div>
-                <div class="client-item">
-                    <img src="https://img.freepik.com/vector-premium/emblema-logotipo-carpinteria-silueta-vintage-hoja-sierra-circular-martillo-clavo-corte-madera_771881-18.jpg" alt="Cliente 2" />
-                </div>
-                <div class="client-item">
-                    <img src="https://static-cse.canva.com/blob/951786/1750logotiposqueteinspiraran.jpg" alt="Cliente 3" />
-                </div>
-                <div class="client-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1OXan3UlSF9fDSQ3jEn0b-Sh7vQ8d9sPVw&s" alt="Cliente 4" />
-                </div>
-                <!-- Segunda duplicación -->
-                <div class="client-item">
-                    <img src="https://th.bing.com/th/id/OIP.sa1gQPGjFF_DPAhRvfnpwAHaHa?rs=1&pid=ImgDetMain" alt="Cliente 1" />
-                </div>
-                <div class="client-item">
-                    <img src="https://img.freepik.com/vector-premium/emblema-logotipo-carpinteria-silueta-vintage-hoja-sierra-circular-martillo-clavo-corte-madera_771881-18.jpg" alt="Cliente 2" />
-                </div>
-                <div class="client-item">
-                    <img src="https://static-cse.canva.com/blob/951786/1750logotiposqueteinspiraran.jpg" alt="Cliente 3" />
-                </div>
-                <div class="client-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1OXan3UlSF9fDSQ3jEn0b-Sh7vQ8d9sPVw&s" alt="Cliente 4" />
+
+    <!-- Clients Section -->
+    <section class="page-section bg-light" id="clients">
+        <div class="container scroll-effect">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Nuestros Principales Clientes</h2>
+                <h3 class="section-subheading text-muted">Empresas que confían en la calidad de nuestros productos.</h3>
+            </div>
+
+            <div class="client-slider">
+                <div class="clients-container">
+                    <!-- Grupo original -->
+                    <div class="client-item">
+                        <img src="https://th.bing.com/th/id/OIP.sa1gQPGjFF_DPAhRvfnpwAHaHa?rs=1&pid=ImgDetMain"
+                            alt="Cliente 1" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://img.freepik.com/vector-premium/emblema-logotipo-carpinteria-silueta-vintage-hoja-sierra-circular-martillo-clavo-corte-madera_771881-18.jpg"
+                            alt="Cliente 2" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://static-cse.canva.com/blob/951786/1750logotiposqueteinspiraran.jpg"
+                            alt="Cliente 3" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1OXan3UlSF9fDSQ3jEn0b-Sh7vQ8d9sPVw&s"
+                            alt="Cliente 4" />
+                    </div>
+                    <!-- Primera duplicación -->
+                    <div class="client-item">
+                        <img src="https://th.bing.com/th/id/OIP.sa1gQPGjFF_DPAhRvfnpwAHaHa?rs=1&pid=ImgDetMain"
+                            alt="Cliente 1" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://img.freepik.com/vector-premium/emblema-logotipo-carpinteria-silueta-vintage-hoja-sierra-circular-martillo-clavo-corte-madera_771881-18.jpg"
+                            alt="Cliente 2" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://static-cse.canva.com/blob/951786/1750logotiposqueteinspiraran.jpg"
+                            alt="Cliente 3" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1OXan3UlSF9fDSQ3jEn0b-Sh7vQ8d9sPVw&s"
+                            alt="Cliente 4" />
+                    </div>
+                    <!-- Segunda duplicación -->
+                    <div class="client-item">
+                        <img src="https://th.bing.com/th/id/OIP.sa1gQPGjFF_DPAhRvfnpwAHaHa?rs=1&pid=ImgDetMain"
+                            alt="Cliente 1" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://img.freepik.com/vector-premium/emblema-logotipo-carpinteria-silueta-vintage-hoja-sierra-circular-martillo-clavo-corte-madera_771881-18.jpg"
+                            alt="Cliente 2" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://static-cse.canva.com/blob/951786/1750logotiposqueteinspiraran.jpg"
+                            alt="Cliente 3" />
+                    </div>
+                    <div class="client-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH1OXan3UlSF9fDSQ3jEn0b-Sh7vQ8d9sPVw&s"
+                            alt="Cliente 4" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- About
     <section class="page-section" id="about">
         <div class="container">
@@ -421,146 +476,148 @@
     <!-- Team-->
     <section class="page-section" id="team">
         <div class="container">
-            <!-- Encabezado con efecto parallax -->
-            <div class="text-center mb-5">
-                <h2 class="section-heading text-uppercase parallax-title">Nuestro Increíble Equipo</h2>
-                <h3 class="section-subheading text-muted fade-in">
-                    Detrás de cada logro hay un equipo comprometido. Conoce a los profesionales apasionados 
-                    que trabajan juntos para hacer realidad nuestras ideas y proyectos.
-                </h3>
-            </div>
-            
-            <div class="team-container">
-                <!-- Miembro 1 -->
-                <div class="team-member-wrapper scroll-animate">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="assets/img/team/1.jpg" alt="Flor Rodríguez" />
-                            <div class="member-overlay"></div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Flor Rodríguez</h4>
-                            <p class="role">Directora General</p>
-                            <div class="member-details">
-                                <p class="specialty">Especialista en Comercio Internacional</p>
-                                <div class="experience">
-                                    <i class="fas fa-star"></i>
-                                    <span>15 años de experiencia</span>
+            <div class="team-background">
+                <!-- Encabezado con efecto parallax -->
+                <div class="text-center mb-5">
+                    <h2 class="section-heading text-uppercase parallax-title">Nuestro Increíble Equipo</h2>
+                    <h3 class="section-subheading text-muted fade-in">
+                        Detrás de cada logro hay un equipo comprometido. Conoce a los profesionales apasionados
+                        que trabajan juntos para hacer realidad nuestras ideas y proyectos.
+                    </h3>
+                </div>
+
+                <div class="team-container">
+                    <!-- Miembro 1 -->
+                    <div class="team-member-wrapper scroll-animate">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="assets/img/team/1.jpg" alt="Flor Rodríguez" />
+                                <div class="member-overlay"></div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Flor Rodríguez</h4>
+                                <p class="role">Directora General</p>
+                                <div class="member-details">
+                                    <p class="specialty">Especialista en Comercio Internacional</p>
+                                    <div class="experience">
+                                        <i class="fas fa-star"></i>
+                                        <span>15 años de experiencia</span>
+                                    </div>
+                                </div>
+                                <div class="social-links">
+                                    <a class="social-btn linkedin" href="#!">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a class="social-btn twitter" href="#!">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a class="social-btn email" href="#!">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="social-links">
-                                <a class="social-btn linkedin" href="#!">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a class="social-btn twitter" href="#!">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a class="social-btn email" href="#!">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
+                        </div>
+                    </div>
+
+                    <!-- Miembro 2 -->
+                    <div class="team-member-wrapper scroll-animate">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="assets/img/team/2.jpg" alt="Marden Zambrano" />
+                                <div class="member-overlay"></div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Marden Zambrano</h4>
+                                <p class="role">Gerente General</p>
+                                <div class="member-details">
+                                    <p class="specialty">Experto en Gestión de Operaciones</p>
+                                    <div class="experience">
+                                        <i class="fas fa-star"></i>
+                                        <span>12 años de experiencia</span>
+                                    </div>
+                                </div>
+                                <div class="social-links">
+                                    <a class="social-btn linkedin" href="#!">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a class="social-btn twitter" href="#!">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a class="social-btn email" href="#!">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Miembro 3 -->
+                    <div class="team-member-wrapper scroll-animate">
+                        <div class="team-member">
+                            <div class="member-photo">
+                                <img src="assets/img/team/3.jpg" alt="Andrea Ostola" />
+                                <div class="member-overlay"></div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Andrea Ostola</h4>
+                                <p class="role">Asistente Comercial</p>
+                                <div class="member-details">
+                                    <p class="specialty">Especialista en Atención al Cliente</p>
+                                    <div class="experience">
+                                        <i class="fas fa-star"></i>
+                                        <span>8 años de experiencia</span>
+                                    </div>
+                                </div>
+                                <div class="social-links">
+                                    <a class="social-btn linkedin" href="#!">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a class="social-btn twitter" href="#!">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a class="social-btn email" href="#!">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Miembro 2 -->
-                <div class="team-member-wrapper scroll-animate">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="assets/img/team/2.jpg" alt="Marden Zambrano" />
-                            <div class="member-overlay"></div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Marden Zambrano</h4>
-                            <p class="role">Gerente General</p>
-                            <div class="member-details">
-                                <p class="specialty">Experto en Gestión de Operaciones</p>
-                                <div class="experience">
-                                    <i class="fas fa-star"></i>
-                                    <span>12 años de experiencia</span>
-                                </div>
-                            </div>
-                            <div class="social-links">
-                                <a class="social-btn linkedin" href="#!">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a class="social-btn twitter" href="#!">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a class="social-btn email" href="#!">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
+
+                <!-- Sección de estadísticas -->
+                <div class="team-stats">
+                    <div class="stat-item scroll-animate">
+                        <i class="fas fa-coffee"></i>
+                        <div class="stat-number" data-target="1500">0</div>
+                        <p>Tazas de Café</p>
+                    </div>
+                    <div class="stat-item scroll-animate">
+                        <i class="fas fa-handshake"></i>
+                        <div class="stat-number" data-target="200">0</div>
+                        <p>Clientes Satisfechos</p>
+                    </div>
+                    <div class="stat-item scroll-animate">
+                        <i class="fas fa-globe-americas"></i>
+                        <div class="stat-number" data-target="15">0</div>
+                        <p>Países Alcanzados</p>
+                    </div>
+                    <div class="stat-item scroll-animate">
+                        <i class="fas fa-award"></i>
+                        <div class="stat-number" data-target="25">0</div>
+                        <p>Premios Ganados</p>
                     </div>
                 </div>
-    
-                <!-- Miembro 3 -->
-                <div class="team-member-wrapper scroll-animate">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="assets/img/team/3.jpg" alt="Andrea Ostola" />
-                            <div class="member-overlay"></div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Andrea Ostola</h4>
-                            <p class="role">Asistente Comercial</p>
-                            <div class="member-details">
-                                <p class="specialty">Especialista en Atención al Cliente</p>
-                                <div class="experience">
-                                    <i class="fas fa-star"></i>
-                                    <span>8 años de experiencia</span>
-                                </div>
-                            </div>
-                            <div class="social-links">
-                                <a class="social-btn linkedin" href="#!">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a class="social-btn twitter" href="#!">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a class="social-btn email" href="#!">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
+
+                <!-- Cita inspiradora -->
+                <div class="team-quote-container scroll-animate">
+                    <div class="quote-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p class="team-quote">
+                            "La excelencia no es un acto, sino un hábito. Trabajamos cada día para superar
+                            nuestras propias expectativas y entregar lo mejor a nuestros clientes."
+                        </p>
+                        <i class="fas fa-quote-right"></i>
                     </div>
-                </div>
-            </div>
-    
-            <!-- Sección de estadísticas -->
-            <div class="team-stats">
-                <div class="stat-item scroll-animate">
-                    <i class="fas fa-coffee"></i>
-                    <div class="stat-number" data-target="1500">0</div>
-                    <p>Tazas de Café</p>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <i class="fas fa-handshake"></i>
-                    <div class="stat-number" data-target="200">0</div>
-                    <p>Clientes Satisfechos</p>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <i class="fas fa-globe-americas"></i>
-                    <div class="stat-number" data-target="15">0</div>
-                    <p>Países Alcanzados</p>
-                </div>
-                <div class="stat-item scroll-animate">
-                    <i class="fas fa-award"></i>
-                    <div class="stat-number" data-target="25">0</div>
-                    <p>Premios Ganados</p>
-                </div>
-            </div>
-    
-            <!-- Cita inspiradora -->
-            <div class="team-quote-container scroll-animate">
-                <div class="quote-content">
-                    <i class="fas fa-quote-left"></i>
-                    <p class="team-quote">
-                        "La excelencia no es un acto, sino un hábito. Trabajamos cada día para superar 
-                        nuestras propias expectativas y entregar lo mejor a nuestros clientes."
-                    </p>
-                    <i class="fas fa-quote-right"></i>
                 </div>
             </div>
         </div>
@@ -568,281 +625,421 @@
 
 
     <!-- Clients-->
- <!-- Partners Section -->
- <section class="page-section" id="partners">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase scroll-animate">Nuestros Partners</h2>
-            <h3 class="section-subheading text-muted scroll-animate">Trabajamos con las mejores empresas del sector</h3>
-        </div>
-        
-        <div class="partners-slider scroll-animate">
-            <div class="partners-track">
-                <!-- Primera fila - 3 elementos -->
-                <div class="partner-row">
-                    <div class="partner-item">
-                        <img src="https://scsexport.com/wp-content/uploads/2023/07/logo_adex-300x115.png" 
-                             alt="ADEX Logo" 
-                             class="partner-image" />
-                        <div class="partner-overlay">
-                            <div class="partner-info">
-                                <h4>ADEX</h4>
-                                <p>Asociación de Exportadores</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="https://scsexport.com/wp-content/uploads/2023/06/prosegur-logo-300x113.png" 
-                             alt="Prosegur Logo" 
-                             class="partner-image" />
-                        <div class="partner-overlay">
-                            <div class="partner-info">
-                                <h4>Prosegur</h4>
-                                <p>Seguridad y Logística</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="https://scsexport.com/wp-content/uploads/2023/06/DHL-Logo-e1689028121471-300x66.png" 
-                             alt="DHL Logo" 
-                             class="partner-image" />
-                        <div class="partner-overlay">
-                            <div class="partner-info">
-                                <h4>DHL</h4>
-                                <p>Logística Internacional</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Segunda fila - 2 elementos centrados -->
-                <div class="partner-row">
-                    <div class="partner-item">
-                        <img src="https://scsexport.com/wp-content/uploads/2023/06/WhatsApp-Image-2023-08-11-at-9.22.16-PM-e1691807624475-300x141.jpeg" 
-                             alt="Partner Logo" 
-                             class="partner-image" />
-                        <div class="partner-overlay">
-                            <div class="partner-info">
-                                <h4>Partner</h4>
-                                <p>Servicios Especializados</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="partner-item">
-                        <img src="https://scsexport.com/wp-content/uploads/2023/06/fedex-logo-4-300x92.png" 
-                             alt="Partner Logo" 
-                             class="partner-image" />
-                        <div class="partner-overlay">
-                            <div class="partner-info">
-                                <h4>FedEx</h4>
-                                <p>Servicios de Envío</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- Testimonials Section -->
-<section class="page-section" id="testimonials">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Testimonios</h2>
-            <h3 class="section-subheading text-muted">Lo que dicen nuestros clientes</h3>
-        </div>
-
-        <div class="testimonials-wrapper">
-            <!-- Testimonio 1 -->
-            <div class="testimonial-box">
-                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
-                <div class="testimonial-content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Excelente servicio, superaron todas nuestras expectativas. Un equipo verdaderamente profesional."</p>
-                    <h4>John Doe</h4>
-                    <span>CEO, Tech Solutions</span>
-                </div>
-            </div>
-
-            <!-- Testimonio 2 -->
-            <div class="testimonial-box">
-                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Cliente">
-                <div class="testimonial-content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Profesionalismo y dedicación excepcional. Resultados increíbles en cada proyecto."</p>
-                    <h4>María García</h4>
-                    <span>Directora de Marketing</span>
-                </div>
-            </div>
-
-            <!-- Testimonio 3 -->
-            <div class="testimonial-box">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Cliente">
-                <div class="testimonial-content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"Han transformado completamente nuestra operación. Su expertise es incomparable."</p>
-                    <h4>Carlos Rodríguez</h4>
-                    <span>Director de Operaciones</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="container scroll-effect">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Contactanos</h2>
-                <h3 class="section-subheading text-muted">Estamos aquí para ayudarte. Escríbenos y nos pondremos en
-                    contacto contigo lo más pronto posible. ¡Nos encantaría saber de ti!</h3>
-            </div>
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- * * SB Forms Contact Form * *-->
-            <!-- * * * * * * * * * * * * * * *-->
-            <!-- This form is pre-integrated with SB Forms.-->
-            <!-- To make this form functional, sign up at-->
-            <!-- https://startbootstrap.com/solution/contact-forms-->
-            <!-- to get an API token!-->
-            <form id="contactForm" action="https://formspree.io/f/xlddoknp" method="POST">
-                <div class="row align-items-stretch mb-5">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input class="form-control" id="name" name="name" type="text" 
-                                placeholder="Nombre *" 
-                                required 
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un nombre.</div>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" id="email" name="email" type="email" 
-                                placeholder="Correo Electrónico *" 
-                                required 
-                                data-sb-validations="required,email" />
-                            <div class="invalid-feedback" data-sb-feedback="email:required">Se requiere un Correo.</div>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" id="phone" name="phone" type="tel" 
-                                placeholder="Numero Telefónico *" 
-                                required 
-                                data-sb-validations="required" />
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">Se requiere un numero telefónico.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-group-textarea mb-md-0">
-                            <textarea class="form-control" id="message" name="message" 
-                                placeholder="Mensaje *" 
-                                required 
-                                data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">Su mensaje es requerido.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Enviar Mensaje</button>
-                </div>
-                <!-- Success/Error Messages -->
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center text-white mb-3">
-                        <div class="fw-bolder">¡Formulario enviado exitosamente!</div>
-                    </div>
-                </div>
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">¡Error al enviar el mensaje!</div>
-                </div>
-            </form>
-        </div>
-
-    </section>
-    <!-- Footer-->
-    <footer class="footer py-4">
+    <!-- Partners Section -->
+    <section class="page-section" id="partners">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start"><b>Copyright &copy; SCS Export S.A.C.</b></div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/scsexport/about/"
-                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/company/scs-export-sac/"
-                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-dark btn-social mx-2"
-                        href="https://api.whatsapp.com/send?phone=51997001233&text=Hola%20Scs%20Export%20Sac%2C%20les%20escribo%20desde%20la%20p%C3%A1gina%20web%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20los%20productos%20que%20ofrecen."
-                        aria-label="WhatsAPP"><i class="fab fa-whatsapp"></i></a>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="#!">Politica de Privacidad</a>
-                    <a class="link-dark text-decoration-none" href="#!">Terminos de Uso</a>
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase scroll-animate">Nuestros Partners</h2>
+                <h3 class="section-subheading text-muted scroll-animate">Trabajamos con las mejores empresas del sector
+                </h3>
+            </div>
+
+            <div class="partners-slider scroll-animate">
+                <div class="partners-track">
+                    <!-- Primera fila - 3 elementos -->
+                    <div class="partner-row">
+                        <div class="partner-item">
+                            <img src="https://scsexport.com/wp-content/uploads/2023/07/logo_adex-300x115.png"
+                                alt="ADEX Logo" class="partner-image" />
+                            <div class="partner-overlay">
+                                <div class="partner-info">
+                                    <h4>ADEX</h4>
+                                    <p>Asociación de Exportadores</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="partner-item">
+                            <img src="https://scsexport.com/wp-content/uploads/2023/06/prosegur-logo-300x113.png"
+                                alt="Prosegur Logo" class="partner-image" />
+                            <div class="partner-overlay">
+                                <div class="partner-info">
+                                    <h4>Prosegur</h4>
+                                    <p>Seguridad y Logística</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="partner-item">
+                            <img src="https://scsexport.com/wp-content/uploads/2023/06/DHL-Logo-e1689028121471-300x66.png"
+                                alt="DHL Logo" class="partner-image" />
+                            <div class="partner-overlay">
+                                <div class="partner-info">
+                                    <h4>DHL</h4>
+                                    <p>Logística Internacional</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Segunda fila - 2 elementos centrados -->
+                    <div class="partner-row">
+                        <div class="partner-item">
+                            <img src="https://scsexport.com/wp-content/uploads/2023/06/WhatsApp-Image-2023-08-11-at-9.22.16-PM-e1691807624475-300x141.jpeg"
+                                alt="Partner Logo" class="partner-image" />
+                            <div class="partner-overlay">
+                                <div class="partner-info">
+                                    <h4>Partner</h4>
+                                    <p>Servicios Especializados</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="partner-item">
+                            <img src="https://scsexport.com/wp-content/uploads/2023/06/fedex-logo-4-300x92.png"
+                                alt="Partner Logo" class="partner-image" />
+                            <div class="partner-overlay">
+                                <div class="partner-info">
+                                    <h4>FedEx</h4>
+                                    <p>Servicios de Envío</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="page-section" id="testimonials">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Testimonios</h2>
+                <h3 class="section-subheading text-muted">Lo que dicen nuestros clientes</h3>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-box">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Excelente servicio, superaron todas nuestras expectativas. Un equipo verdaderamente
+                            profesional."</p>
+                        <h4>John Doe</h4>
+                        <span>CEO, Tech Solutions</span>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="testimonial-box">
+                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Cliente">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Profesionalismo y dedicación excepcional. Resultados increíbles en cada proyecto."</p>
+                        <h4>María García</h4>
+                        <span>Directora de Marketing</span>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-box">
+                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Cliente">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Han transformado completamente nuestra operación. Su expertise es incomparable."</p>
+                        <h4>Carlos Rodríguez</h4>
+                        <span>Director de Operaciones</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Contact CTA -->
+<section class="page-section cta-section" id="contact">
+    <div class="container">
+        <div class="cta-container">
+            <div class="cta-content text-center">
+                <span class="pre-heading">¿Buscando productos premium de Perú?</span>
+                <h2 class="section-heading text-uppercase">¿Listo para llevar lo mejor del café y cacao peruano a tu mercado?</h2>
+                <p class="cta-description">
+                    Conectamos tu negocio con los mejores productores de café y cacao del Perú. 
+                    Obtén una cotización personalizada en 24 horas.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn-main-cta" onclick="openContactModal()">
+                        Solicitar Cotización
+                        <i class="fas fa-file-invoice-dollar ms-2"></i>
+                    </button>
+               
+                    <a href="contact.html" class="btn-secondary-cta">
+                        Agendar una Reunión
+                        <i class="fas fa-phone-alt ms-2"></i>
+                    </a>
+                </div>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Respuesta en 24h</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Productos Certificados</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Envíos Globales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal de Contacto -->
+<div id="contactModal" class="contact-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeContactModal()">&times;</span>
+        <div class="modal-header">
+            <h3>Solicita tu Cotización</h3>
+            <p>Completa el formulario y te responderemos en menos de 24 horas</p>
+        </div>
+        <form id="quotationForm" class="modal-form">
+            <div class="form-group">
+                <input type="text" name="empresa" required placeholder="Nombre de tu empresa">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" required placeholder="Email corporativo">
+            </div>
+            <div class="form-group">
+                <select name="producto" required>
+                    <option value="">Selecciona el producto</option>
+                    <option value="cafe">Café</option>
+                    <option value="cacao">Cacao</option>
+                    <option value="both">Ambos</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea name="mensaje" placeholder="Cuéntanos sobre tus necesidades de importación"></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="submitButton">
+                Enviar Solicitud
+                <i class="fas fa-paper-plane ms-2"></i>
+            </button>
+        </form>
+    </div>
+</div>
+<!-- Agregar esto después del modal -->
+<div class="notification-container" id="notification">
+    <div class="notification success">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <div class="notification-text">
+                <h4>¡Envío Exitoso!</h4>
+                <p>Gracias por contactarnos. Te responderemos en menos de 24 horas.</p>
+            </div>
+        </div>
+        <button class="notification-close" onclick="closeNotification()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+<!-- Footer Moderno -->
+<footer class="footer-modern">
+    <div class="footer-waves">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Sección Principal -->
+        <div class="footer-content">
+            <!-- Columna 1: Información de la empresa -->
+            <div class="footer-section">
+                <div class="company-info">
+                    <img src="https://scsexport.com/wp-content/uploads/2023/06/Recurso-2scs-1.png" alt="SCS Export Logo" class="footer-logo">
+                    <p class="company-description">
+                        Llevamos lo mejor del Perú al mundo. Especialistas en exportación de café, cacao y plátano de la más alta calidad.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal 123, Lima, Perú</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+51 997 001 233</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contacto@scsexport.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div class="footer-section">
+                <h3 class="footer-title">Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#portfolio">Nuestros Productos</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Productos -->
+            <div class="footer-section">
+                <h3 class="footer-title">Productos</h3>
+                <ul class="footer-links">
+                    <li><a href="fichatecnica-cafe.html">Café Premium</a></li>
+                    <li><a href="fichatecnica-cacao.html">Cacao Orgánico</a></li>
+                    <li><a href="fichatecnica-platano.html">Plátano Beyaco</a></li>
+                    <li><a href="#certificates">Certificaciones</a></li>
+                    <li><a href="#quality">Control de Calidad</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Newsletter -->
+            <div class="footer-section">
+                <h3 class="footer-title">Newsletter</h3>
+                <p class="newsletter-text">Suscríbete para recibir noticias y actualizaciones</p>
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn-subscribe">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/scsexport/about/" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/scs-export-sac/" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=51997001233" class="social-icon" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/scsexport" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra inferior -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p>&copy; 2024 SCS Export S.A.C. Todos los derechos reservados</p>
+                </div>
+                <div class="legal-links">
+                    <a href="privacy.html">Política de Privacidad</a>
+                    <a href="terms.html">Términos de Uso</a>
+                    <a href="cookies.html">Política de Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
+    <!-- Portfolio Modals-->
+    <!-- Modal 1: Cacao -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                </div>
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-lg-10">
                             <div class="modal-body">
-                                <!-- Project details-->
-                                <h3 class="text-uppercase">Especificaciones</h2>
-                                    <p class="item-intro text-muted">Cocoa Beans.</p>
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="https://scsexport.com/wp-content/uploads/2023/06/cacao-1024x538-1.png"
-                                        alt="..." />
-                                    <p>Granos De Cacao Secos. Nuestras
-                                        mazorcas fueron cosechadas
-                                        siguiendo estándares de seguridad
-                                        alimentaria. Se extraen las semillas,
-                                        se someten a un proceso de
-                                        fermentación y secado natural.
-                                        Luego estas semillas son
-                                        seleccionadas y clasificadas. </p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Nombre Científico: </strong>
-                                            Theobroma Cacao
-                                        </li>
-                                        <li>
-                                            <strong>Variedades:</strong>
-                                            CCN51, Hibrido y Natural
-                                        </li>
-                                        <li>
-                                            <strong>Partida Arancelaria:</strong>
-                                            1801.00.19.00
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                <h2 class="text-uppercase">Cacao</h2>
+                                <p class="item-intro text-muted">
+                                    <i class="fas fa-star text-warning"></i>
+                                    Granos selectos de Ucayali
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="product-badge">
+                                        <i class="fas fa-certificate"></i>
+                                        Orgánico Certificado
+                                    </span>
+                                    <span class="product-badge">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Ucayali, Perú
+                                    </span>
+                                    <span class="product-badge">
+                                        <i class="fas fa-award"></i>
+                                        Premium Quality
+                                    </span>
+                                </div>
+
+                                <div class="image-container">
+                                    <div class="product-frame">
+                                        <img class="img-fluid d-block mx-auto"
+                                            src="https://scsexport.com/wp-content/uploads/2023/06/cacao-1024x538-1.png"
+                                            alt="Cacao de Ucayali" />
+                                        <div class="quality-indicator">
+                                            <i class="fas fa-star"></i>
+                                            Premium Quality
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="text-muted">
+                                    Nuestro cacao es cultivado en las fértiles tierras de Ucayali,
+                                    donde las condiciones climáticas y el suelo crean el ambiente
+                                    perfecto para producir granos de la más alta calidad.
+                                </p>
+
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Origen</strong>
+                                        <span>Ucayali, Perú</span>
+                                    </li>
+                                    <li>
+                                        <strong>Variedad</strong>
+                                        <span>Cacao Criollo</span>
+                                    </li>
+                                    <li>
+                                        <strong>Certificaciones</strong>
+                                        <span>Orgánico, Fair Trade</span>
+                                    </li>
+                                    <li>
+                                        <strong>Disponibilidad</strong>
+                                        <span>Todo el año</span>
+                                    </li>
+                                </ul>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-primary btn-xl text-uppercase me-3" data-bs-dismiss="modal"
                                         type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Listo
+                                        <i class="fas fa-times me-1"></i>
+                                        Cerrar
                                     </button>
+                                    <a href="fichatecnica-cacao.html" class="btn btn-primary btn-xl text-uppercase">
+                                        <i class="fas fa-file-alt me-1"></i>
+                                        Ficha Técnica
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -850,56 +1047,88 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 2 modal popup-->
+
+    <!-- Modal 2: Café -->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                </div>
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-lg-10">
                             <div class="modal-body">
-                                <!-- Project details-->
-                                <h3 class="text-uppercase">Especificaciones</h2>
-                                    <p class="item-intro text-muted">Green Coffee Beans .</p>
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="https://scsexport.com/wp-content/uploads/2024/01/CAFE_VERDE.jpg"
-                                        alt="..." />
-                                    <p>Café en granos verdes,
-                                        cosechados de manera
-                                        cuidadosa.
-                                        En sacos de Yute de 45 kg a 69
-                                        kg. Contamos con cafés
-                                        limpiados naturalmente y
-                                        lavados, siguiendo los
-                                        estándares de seguridad
-                                        alimentaria. El café es un
-                                        estimulante del sistema nervioso
-                                        debido al alcaloide cafeína que
-                                        contiene. Tiene propiedades
-                                        antioxidantes, analgésicas y es
-                                        un estimulante natural del
-                                        metabolismo. </p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Nombre Científico: </strong>
-                                            Coffee Arábica
-                                        </li>
-                                        <li>
-                                            <strong>Variedades:</strong>
-                                            Blend (Geisha, Típica, Caturra)
-                                        </li>
-                                        <li>
-                                            <strong>Partida Arancelaria:</strong>
-                                            0901.11.90.00
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                <h2 class="text-uppercase">Café</h2>
+                                <p class="item-intro text-muted">
+                                    <i class="fas fa-star text-warning"></i>
+                                    De las mejores regiones del Perú
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="product-badge">
+                                        <i class="fas fa-mountain"></i>
+                                        Altura Premium
+                                    </span>
+                                    <span class="product-badge">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Múltiples Regiones
+                                    </span>
+                                    <span class="product-badge">
+                                        <i class="fas fa-check-circle"></i>
+                                        Calidad Certificada
+                                    </span>
+                                </div>
+
+                                <div class="image-container">
+                                    <div class="product-frame">
+                                        <img class="img-fluid d-block mx-auto"
+                                            src="https://scsexport.com/wp-content/uploads/2024/01/CAFE_VERDE.jpg"
+                                            alt="Café Verde Premium" />
+                                        <div class="quality-indicator">
+                                            <i class="fas fa-star"></i>
+                                            Premium Quality
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="text-muted">
+                                    Nuestro café proviene de las regiones más prestigiosas del Perú,
+                                    donde la altitud y el clima crean las condiciones perfectas para
+                                    un café excepcional. Cada grano es seleccionado cuidadosamente
+                                    para garantizar la mejor calidad en cada taza.
+                                </p>
+
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Regiones</strong>
+                                        <span>Amazonas, Cajamarca, Junín</span>
+                                    </li>
+                                    <li>
+                                        <strong>Altitud</strong>
+                                        <span>1,200 - 1,800 msnm</span>
+                                    </li>
+                                    <li>
+                                        <strong>Variedades</strong>
+                                        <span>Arábica, Típica, Caturra</span>
+                                    </li>
+                                    <li>
+                                        <strong>Proceso</strong>
+                                        <span>Lavado tradicional</span>
+                                    </li>
+                                </ul>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-primary btn-xl text-uppercase me-3" data-bs-dismiss="modal"
                                         type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Listo
+                                        <i class="fas fa-times me-1"></i>
+                                        Cerrar
                                     </button>
+                                    <a href="fichatecnica-cafe.html" class="btn btn-primary btn-xl text-uppercase">
+                                        <i class="fas fa-file-alt me-1"></i>
+                                        Ficha Técnica
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -907,48 +1136,89 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio item 3 modal popup-->
+
+    <!-- Modal 3: Plátano -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
-                        alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                </div>
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
+                        <div class="col-lg-10">
                             <div class="modal-body">
-                                <!-- Project details-->
-                                <h3 class="text-uppercase">Especificaciones</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="https://scsexport.com/wp-content/uploads/2024/07/PlatanosVerdesBarranquilla-e1722441762871-768x420.jpg"
-                                        alt="..." />
-                                    <p>El plátano, un tesoro del trópico peruano, es apreciado por su dulzura y
-                                        versatilidad
-                                        en la gastronomía. Conocido por sus beneficios nutricionales, es un ingrediente
-                                        esencial en diversas recetas. En la empresa SCS Export SAC, garantizamos la
-                                        pureza y
-                                        frescura de nuestros plátanos, asegurando un producto de calidad excepcional que
-                                        cumple con los estándares de nuestros exigentes clientes globales.</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Nombre Científico: </strong>
-                                            Musa Paradisiaca
-                                        </li>
-                                        <li>
-                                            <strong>Variedades:</strong>
-                                            ----------------
-                                        </li>
-                                        <li>
-                                            <strong>Partida Arancelaria:</strong>
-                                            0803.10.10.00
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                <h2 class="text-uppercase">Plátano Beyaco</h2>
+                                <p class="item-intro text-muted">
+                                    <i class="fas fa-star text-warning"></i>
+                                    Calidad Premium de Aguaytía
+                                </p>
+
+                                <div class="mb-4">
+                                    <span class="product-badge">
+                                        <i class="fas fa-leaf"></i>
+                                        Cultivo Natural
+                                    </span>
+                                    <span class="product-badge">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Aguaytía, Perú
+                                    </span>
+                                    <span class="product-badge">
+                                        <i class="fas fa-shipping-fast"></i>
+                                        Exportación Premium
+                                    </span>
+                                </div>
+
+                                <div class="image-container">
+                                    <div class="product-frame">
+                                        <img class="img-fluid d-block mx-auto"
+                                            src="https://scsexport.com/wp-content/uploads/2024/07/PlatanosVerdesBarranquilla-e1722441762871-768x420.jpg"
+                                            alt="Plátano Beyaco" />
+                                        <div class="quality-indicator">
+                                            <i class="fas fa-star"></i>
+                                            Premium Quality
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="text-muted">
+                                    Nuestro plátano Beyaco es cultivado en las tierras fértiles de Aguaytía,
+                                    donde el clima tropical y los suelos ricos proporcionan las condiciones
+                                    ideales para producir frutos de calidad superior. Cada racimo es
+                                    seleccionado cuidadosamente para garantizar los más altos estándares
+                                    de exportación.
+                                </p>
+
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Origen</strong>
+                                        <span>Aguaytía-Ucayali</span>
+                                    </li>
+                                    <li>
+                                        <strong>Variedad</strong>
+                                        <span>Plátano Beyaco</span>
+                                    </li>
+                                    <li>
+                                        <strong>Calibre</strong>
+                                        <span>Premium Export</span>
+                                    </li>
+                                    <li>
+                                        <strong>Empaque</strong>
+                                        <span>Cajas especializadas</span>
+                                    </li>
+                                </ul>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-primary btn-xl text-uppercase me-3" data-bs-dismiss="modal"
                                         type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Listo
+                                        <i class="fas fa-times me-1"></i>
+                                        Cerrar
                                     </button>
+                                    <a href="fichatecnica-platano.html" class="btn btn-primary btn-xl text-uppercase">
+                                        <i class="fas fa-file-alt me-1"></i>
+                                        Ficha Técnica
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1085,67 +1355,141 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const elements = document.querySelectorAll(".scroll-effect");
+        const elements = document.querySelectorAll(".scroll-effect");
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
-      elements.forEach(element => observer.observe(element));
+        elements.forEach(element => observer.observe(element));
     });
     // Código JavaScript para el carrusel de testimonios
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.querySelector('.control-btn.prev');
-    const nextBtn = document.querySelector('.control-btn.next');
-    let currentIndex = 0;
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.testimonial-card');
+        const prevBtn = document.querySelector('.control-btn.prev');
+        const nextBtn = document.querySelector('.control-btn.next');
+        let currentIndex = 0;
 
-    function updateCards() {
-        cards.forEach((card, index) => {
-            card.classList.remove('active', 'prev', 'next');
-            
-            if (index === currentIndex) {
-                card.classList.add('active');
-            } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
-                card.classList.add('prev');
-            } else if (index === (currentIndex + 1) % cards.length) {
-                card.classList.add('next');
-            }
+        function updateCards() {
+            cards.forEach((card, index) => {
+                card.classList.remove('active', 'prev', 'next');
+
+                if (index === currentIndex) {
+                    card.classList.add('active');
+                } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
+                    card.classList.add('prev');
+                } else if (index === (currentIndex + 1) % cards.length) {
+                    card.classList.add('next');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateCards();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+            updateCards();
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto rotate
+        let autoRotate = setInterval(nextSlide, 8000);
+
+        // Pause on hover
+        const container = document.querySelector('.testimonials-container');
+        container.addEventListener('mouseenter', () => clearInterval(autoRotate));
+        container.addEventListener('mouseleave', () => autoRotate = setInterval(nextSlide, 5000));
+
+        // Initial setup
+        updateCards();
+    });
+   
+
+
+
+function openContactModal() {
+    document.getElementById('contactModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeContactModal() {
+    document.getElementById('contactModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+
+window.onclick = function(event) {
+    const modal = document.getElementById('contactModal');
+    if (event.target == modal) {
+        closeContactModal();
+    }
+}
+
+
+document.getElementById('quotationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitButton = document.getElementById('submitButton');
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Enviando...';
+
+    const formData = new FormData(this);
+
+    fetch('https://formspree.io/f/xlddoknp', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        submitButton.innerHTML = '¡Enviado!';
+        closeContactModal();
+        Swal.fire({
+            title: '¡Mensaje Enviado!',
+            text: 'Gracias por contactarnos. Te responderemos en menos de 24 horas.',
+            icon: 'success',
+            confirmButtonColor: '#00A67E',
+            confirmButtonText: 'Entendido'
         });
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % cards.length;
-        updateCards();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        updateCards();
-    }
-
-    // Event listeners
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-
-    // Auto rotate
-    let autoRotate = setInterval(nextSlide, 8000);
-
-    // Pause on hover
-    const container = document.querySelector('.testimonials-container');
-    container.addEventListener('mouseenter', () => clearInterval(autoRotate));
-    container.addEventListener('mouseleave', () => autoRotate = setInterval(nextSlide, 5000));
-
-    // Initial setup
-    updateCards();
+        this.reset();
+    })
+    .catch(error => {
+        Swal.fire({
+            title: 'Error',
+            text: 'Hubo un problema al enviar el mensaje. Por favor, inténtalo nuevamente.',
+            icon: 'error',
+            confirmButtonColor: '#00A67E',
+            confirmButtonText: 'Cerrar'
+        });
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Enviar Solicitud <i class="fas fa-paper-plane ms-2"></i>';
+    })
+    .finally(() => {
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Enviar Solicitud <i class="fas fa-paper-plane ms-2"></i>';
+        }, 3000);
+    });
 });
-  </script>
+
+</script>
+
 </html>
