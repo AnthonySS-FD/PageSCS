@@ -23,10 +23,11 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.js"></script>
-       <!-- Sweet Alert 2 -->
-<!-- En el head -->
-<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Sweet Alert 2 -->
+    <!-- En el head -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
 
 </head>
 
@@ -52,14 +53,29 @@
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
 
+    <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="overlay"></div>
-            <div class="masthead-subheading">Granos de Café y Cacao de Perú para el Mundo</div>
-            <div class="masthead-heading text-uppercase">Envíos a todo el Mundo</div>
-            <a class="btn btn-primary btn-xl text-uppercase" href="#portfolio">Saber Más</a>
+            <div class="masthead-content">
+                <div class="masthead-subheading">
+                    Granos de <span class="highlight-word">Café</span> y <span class="highlight-word">Cacao</span> de
+                    Perú para el Mundo
+                </div>
+                <div class="masthead-heading">Envíos a todo el mundo</div>
+
+                <a href="#portfolio" class="coffee-button">
+                    <div class="animation-container">
+                        <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+                            type="module"></script>
+                        <dotlottie-player
+                            src="https://lottie.host/eba5e475-e387-4f71-9923-76522aa733cc/8touoAIHHK.lottie"
+                            background="transparent" speed="1" style="width: 300px; height: 300px" loop
+                            autoplay></dotlottie-player>
+                    </div>
+                    <span class="button-text2">SABER MÁS</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -766,198 +782,203 @@
         </div>
     </section>
 
- <!-- Contact CTA -->
-<section class="page-section cta-section" id="contact">
-    <div class="container">
-        <div class="cta-container">
-            <div class="cta-content text-center">
-                <span class="pre-heading">¿Buscando productos premium de Perú?</span>
-                <h2 class="section-heading text-uppercase">¿Listo para llevar lo mejor del café y cacao peruano a tu mercado?</h2>
-                <p class="cta-description">
-                    Conectamos tu negocio con los mejores productores de café y cacao del Perú. 
-                    Obtén una cotización personalizada en 24 horas.
-                </p>
-                <div class="cta-buttons">
-                    <button class="btn-main-cta" onclick="openContactModal()">
-                        Solicitar Cotización
-                        <i class="fas fa-file-invoice-dollar ms-2"></i>
-                    </button>
-               
-                    <a href="contact.html" class="btn-secondary-cta">
-                        Agendar una Reunión
-                        <i class="fas fa-phone-alt ms-2"></i>
-                    </a>
-                </div>
-                <div class="trust-indicators">
-                    <div class="trust-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Respuesta en 24h</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Productos Certificados</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-shipping-fast"></i>
-                        <span>Envíos Globales</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Modal de Contacto -->
-<div id="contactModal" class="contact-modal">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeContactModal()">&times;</span>
-        <div class="modal-header">
-            <h3>Solicita tu Cotización</h3>
-            <p>Completa el formulario y te responderemos en menos de 24 horas</p>
-        </div>
-        <form id="quotationForm" class="modal-form">
-            <div class="form-group">
-                <input type="text" name="empresa" required placeholder="Nombre de tu empresa">
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" required placeholder="Email corporativo">
-            </div>
-            <div class="form-group">
-                <select name="producto" required>
-                    <option value="">Selecciona el producto</option>
-                    <option value="cafe">Café</option>
-                    <option value="cacao">Cacao</option>
-                    <option value="both">Ambos</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <textarea name="mensaje" placeholder="Cuéntanos sobre tus necesidades de importación"></textarea>
-            </div>
-            <button type="submit" class="submit-btn" id="submitButton">
-                Enviar Solicitud
-                <i class="fas fa-paper-plane ms-2"></i>
-            </button>
-        </form>
-    </div>
-</div>
-<!-- Agregar esto después del modal -->
-<div class="notification-container" id="notification">
-    <div class="notification success">
-        <div class="notification-content">
-            <i class="fas fa-check-circle"></i>
-            <div class="notification-text">
-                <h4>¡Envío Exitoso!</h4>
-                <p>Gracias por contactarnos. Te responderemos en menos de 24 horas.</p>
-            </div>
-        </div>
-        <button class="notification-close" onclick="closeNotification()">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-</div>
-<!-- Footer Moderno -->
-<footer class="footer-modern">
-    <div class="footer-waves">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-    </div>
-    
-    <div class="container">
-        <!-- Sección Principal -->
-        <div class="footer-content">
-            <!-- Columna 1: Información de la empresa -->
-            <div class="footer-section">
-                <div class="company-info">
-                    <img src="https://scsexport.com/wp-content/uploads/2023/06/Recurso-2scs-1.png" alt="SCS Export Logo" class="footer-logo">
-                    <p class="company-description">
-                        Llevamos lo mejor del Perú al mundo. Especialistas en exportación de café, cacao y plátano de la más alta calidad.
+    <!-- Contact CTA -->
+    <section class="page-section cta-section" id="contact">
+        <div class="container">
+            <div class="cta-container">
+                <div class="cta-content text-center">
+                    <span class="pre-heading">¿Buscando productos premium de Perú?</span>
+                    <h2 class="section-heading text-uppercase">¿Listo para llevar lo mejor del café y cacao peruano a tu
+                        mercado?</h2>
+                    <p class="cta-description">
+                        Conectamos tu negocio con los mejores productores de café y cacao del Perú.
+                        Obtén una cotización personalizada en 24 horas.
                     </p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Av. Principal 123, Lima, Perú</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+51 997 001 233</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contacto@scsexport.com</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Columna 2: Enlaces Rápidos -->
-            <div class="footer-section">
-                <h3 class="footer-title">Enlaces Rápidos</h3>
-                <ul class="footer-links">
-                    <li><a href="#portfolio">Nuestros Productos</a></li>
-                    <li><a href="#about">Sobre Nosotros</a></li>
-                    <li><a href="#team">Equipo</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-
-            <!-- Columna 3: Productos -->
-            <div class="footer-section">
-                <h3 class="footer-title">Productos</h3>
-                <ul class="footer-links">
-                    <li><a href="fichatecnica-cafe.html">Café Premium</a></li>
-                    <li><a href="fichatecnica-cacao.html">Cacao Orgánico</a></li>
-                    <li><a href="fichatecnica-platano.html">Plátano Beyaco</a></li>
-                    <li><a href="#certificates">Certificaciones</a></li>
-                    <li><a href="#quality">Control de Calidad</a></li>
-                </ul>
-            </div>
-
-            <!-- Columna 4: Newsletter -->
-            <div class="footer-section">
-                <h3 class="footer-title">Newsletter</h3>
-                <p class="newsletter-text">Suscríbete para recibir noticias y actualizaciones</p>
-                <form class="newsletter-form">
-                    <div class="input-group">
-                        <input type="email" placeholder="Tu correo electrónico" required>
-                        <button type="submit" class="btn-subscribe">
-                            <i class="fas fa-paper-plane"></i>
+                    <div class="cta-buttons">
+                        <button class="btn-main-cta" onclick="openContactModal()">
+                            Solicitar Cotización
+                            <i class="fas fa-file-invoice-dollar ms-2"></i>
                         </button>
+
+                        <a href="contact.html" class="btn-secondary-cta">
+                            Agendar una Reunión
+                            <i class="fas fa-phone-alt ms-2"></i>
+                        </a>
                     </div>
-                </form>
-                <div class="social-media">
-                    <a href="https://www.facebook.com/scsexport/about/" class="social-icon" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/scs-export-sac/" class="social-icon" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=51997001233" class="social-icon" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://instagram.com/scsexport" class="social-icon" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Respuesta en 24h</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Productos Certificados</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Envíos Globales</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Barra inferior -->
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <div class="copyright">
-                    <p>&copy; 2024 SCS Export S.A.C. Todos los derechos reservados</p>
-                </div>
-                <div class="legal-links">
-                    <a href="privacy.html">Política de Privacidad</a>
-                    <a href="terms.html">Términos de Uso</a>
-                    <a href="cookies.html">Política de Cookies</a>
-                </div>
+    <!-- Modal de Contacto -->
+    <div id="contactModal" class="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <div class="modal-header">
+                <h3>Solicita tu Cotización</h3>
+                <p>Completa el formulario y te responderemos en menos de 24 horas</p>
             </div>
+            <form id="quotationForm" class="modal-form">
+                <div class="form-group">
+                    <input type="text" name="empresa" required placeholder="Nombre de tu empresa">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" required placeholder="Email corporativo">
+                </div>
+                <div class="form-group">
+                    <select name="producto" required>
+                        <option value="">Selecciona el producto</option>
+                        <option value="cafe">Café</option>
+                        <option value="cacao">Cacao</option>
+                        <option value="both">Ambos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="mensaje" placeholder="Cuéntanos sobre tus necesidades de importación"></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitButton">
+                    Enviar Solicitud
+                    <i class="fas fa-paper-plane ms-2"></i>
+                </button>
+            </form>
         </div>
     </div>
-</footer>
+    <!-- Agregar esto después del modal -->
+    <div class="notification-container" id="notification">
+        <div class="notification success">
+            <div class="notification-content">
+                <i class="fas fa-check-circle"></i>
+                <div class="notification-text">
+                    <h4>¡Envío Exitoso!</h4>
+                    <p>Gracias por contactarnos. Te responderemos en menos de 24 horas.</p>
+                </div>
+            </div>
+            <button class="notification-close" onclick="closeNotification()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Footer Moderno -->
+    <footer class="footer-modern">
+        <div class="footer-waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+
+        <div class="container">
+            <!-- Sección Principal -->
+            <div class="footer-content">
+                <!-- Columna 1: Información de la empresa -->
+                <div class="footer-section">
+                    <div class="company-info">
+                        <img src="https://scsexport.com/wp-content/uploads/2023/06/Recurso-2scs-1.png"
+                            alt="SCS Export Logo" class="footer-logo">
+                        <p class="company-description">
+                            Llevamos lo mejor del Perú al mundo. Especialistas en exportación de café, cacao y plátano
+                            de la más alta calidad.
+                        </p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Av. Principal 123, Lima, Perú</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+51 997 001 233</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>contacto@scsexport.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#portfolio">Nuestros Productos</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#team">Equipo</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Productos -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Productos</h3>
+                    <ul class="footer-links">
+                        <li><a href="fichatecnica-cafe.html">Café Premium</a></li>
+                        <li><a href="fichatecnica-cacao.html">Cacao Orgánico</a></li>
+                        <li><a href="fichatecnica-platano.html">Plátano Beyaco</a></li>
+                        <li><a href="#certificates">Certificaciones</a></li>
+                        <li><a href="#quality">Control de Calidad</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Newsletter -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">Suscríbete para recibir noticias y actualizaciones</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Tu correo electrónico" required>
+                            <button type="submit" class="btn-subscribe">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/scsexport/about/" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/scs-export-sac/" class="social-icon"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=51997001233" class="social-icon"
+                            aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/scsexport" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra inferior -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2024 SCS Export S.A.C. Todos los derechos reservados</p>
+                    </div>
+                    <div class="legal-links">
+                        <a href="privacy.html">Política de Privacidad</a>
+                        <a href="terms.html">Términos de Uso</a>
+                        <a href="cookies.html">Política de Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Portfolio Modals-->
     <!-- Portfolio Modals-->
     <!-- Modal 1: Cacao -->
@@ -1419,76 +1440,76 @@
         // Initial setup
         updateCards();
     });
-   
 
 
 
-function openContactModal() {
-    document.getElementById('contactModal').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
 
-function closeContactModal() {
-    document.getElementById('contactModal').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-
-window.onclick = function(event) {
-    const modal = document.getElementById('contactModal');
-    if (event.target == modal) {
-        closeContactModal();
+    function openContactModal() {
+        document.getElementById('contactModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
-}
+
+    function closeContactModal() {
+        document.getElementById('contactModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 
 
-document.getElementById('quotationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const submitButton = document.getElementById('submitButton');
-    submitButton.disabled = true;
-    submitButton.innerHTML = 'Enviando...';
-
-    const formData = new FormData(this);
-
-    fetch('https://formspree.io/f/xlddoknp', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
+    window.onclick = function (event) {
+        const modal = document.getElementById('contactModal');
+        if (event.target == modal) {
+            closeContactModal();
         }
-    })
-    .then(response => response.json())
-    .then(data => {
-        submitButton.innerHTML = '¡Enviado!';
-        closeContactModal();
-        Swal.fire({
-            title: '¡Mensaje Enviado!',
-            text: 'Gracias por contactarnos. Te responderemos en menos de 24 horas.',
-            icon: 'success',
-            confirmButtonColor: '#00A67E',
-            confirmButtonText: 'Entendido'
-        });
-        this.reset();
-    })
-    .catch(error => {
-        Swal.fire({
-            title: 'Error',
-            text: 'Hubo un problema al enviar el mensaje. Por favor, inténtalo nuevamente.',
-            icon: 'error',
-            confirmButtonColor: '#00A67E',
-            confirmButtonText: 'Cerrar'
-        });
-        submitButton.disabled = false;
-        submitButton.innerHTML = 'Enviar Solicitud <i class="fas fa-paper-plane ms-2"></i>';
-    })
-    .finally(() => {
-        setTimeout(() => {
-            submitButton.disabled = false;
-            submitButton.innerHTML = 'Enviar Solicitud <i class="fas fa-paper-plane ms-2"></i>';
-        }, 3000);
+    }
+
+
+    document.getElementById('quotationForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitButton = document.getElementById('submitButton');
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Enviando...';
+
+        const formData = new FormData(this);
+
+        fetch('https://formspree.io/f/xlddoknp', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                submitButton.innerHTML = '¡Enviado!';
+                closeContactModal();
+                Swal.fire({
+                    title: '¡Mensaje Enviado!',
+                    text: 'Gracias por contactarnos. Te responderemos en menos de 24 horas.',
+                    icon: 'success',
+                    confirmButtonColor: '#00A67E',
+                    confirmButtonText: 'Entendido'
+                });
+                this.reset();
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Hubo un problema al enviar el mensaje. Por favor, inténtalo nuevamente.',
+                    icon: 'error',
+                    confirmButtonColor: '#00A67E',
+                    confirmButtonText: 'Cerrar'
+                });
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Enviar Solicitud <i class="fas fa-paper-plane ms-2"></i>';
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = 'Enviar Solicitud <i class="fas fa-paper-plane ms-2"></i>';
+                }, 3000);
+            });
     });
-});
 
 </script>
 
