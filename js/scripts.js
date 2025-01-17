@@ -394,3 +394,40 @@ window.onclick = function(event) {
     }
 }
 
+// Crear burbujas
+function createBubbles(button) {
+    const bubblesContainer = button.querySelector('.coffee-bubbles');
+    
+    setInterval(() => {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        
+        // Tamaño aleatorio
+        const size = Math.random() * 8 + 4;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        
+        // Posición inicial aleatoria
+        bubble.style.left = `${Math.random() * 100}%`;
+        bubble.style.animation = `bubble ${1 + Math.random()}s ease-out forwards`;
+        
+        bubblesContainer.appendChild(bubble);
+        
+        // Eliminar burbuja después de la animación
+        setTimeout(() => bubble.remove(), 2000);
+    }, 100);
+}
+
+// Nuevo código para el botón de café
+document.addEventListener('DOMContentLoaded', function() {
+    const coffeeButton = document.querySelector('.coffee-button');
+    const player = document.querySelector('dotlottie-player');
+    
+    coffeeButton.addEventListener('mouseenter', () => {
+        player.play();
+    });
+
+    coffeeButton.addEventListener('mouseleave', () => {
+        player.stop();
+    });
+});
