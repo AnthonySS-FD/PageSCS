@@ -10928,7 +10928,7 @@ p {
   font-weight: 500;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ffc800;
+  color: #00A67E;
 }
 
 @media (min-width: 992px) {
@@ -10977,6 +10977,7 @@ header.masthead {
   background-position: center center;
   background-size: cover;
   height: 100vh;
+  opacity: 2;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -12608,7 +12609,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
   border-radius: 15px;
   padding: 25px;
  
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   aspect-ratio: 16/9;
   display: flex;
@@ -12629,7 +12630,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
   width: 100%;
   height: auto;
   object-fit: contain;
-  transition: transform 0.4s ease;
+  transition: transform 0.1s ease;
 }
 
 .partner-overlay {
@@ -12674,7 +12675,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 }
 
 .partner-item:hover .partner-image {
-  transform: scale(1.1);
+  transform: scale(0.9);
 }
 
 .partner-item:hover .partner-overlay {
@@ -13851,4 +13852,112 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
   .notification-container {
       left: 20px;
   }
+}
+
+/* Estilos para el navbar moderno */
+.navbar {
+  background: rgba(33, 37, 41, 0.95);
+ 
+  transition: all 0.4s ease;
+  padding: 1rem 0;
+}
+
+.navbar-brand img {
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.navbar.navbar-shrink {
+  padding: 0.5rem 0;
+  background: rgba(33, 37, 41, 0.98);
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #00A67E;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Estilos para palabras especiales en el masthead */
+.highlight-word {
+  background: linear-gradient(45deg, #8B4513, #4A2511);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -100%; }
+  100% { background-position: 200%; }
+}
+
+/* Estilos específicos para el botón de taza de café */
+
+
+.coffee-button:hover .button-text2 {
+  color: #C4A484;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.coffee-button {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.animation-container {
+  transition: transform 0.3s ease;
+}
+
+.coffee-button:hover .animation-container {
+  transform: translateY(-10px);
+}
+
+.button-text2 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transition: all 0.3s ease;
+}
+
+.coffee-button:hover .button-text2 {
+  
+  color: #C4A484;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.animation-container {
+  transition: transform 0.3s ease;
+  margin-bottom: -40px; /* Añadido para acercar más el texto */
+}
+/* Highlight words */
+.highlight-word {
+  background: linear-gradient(45deg, #C4A484, #8B7355);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  padding: 0 5px;
 }
