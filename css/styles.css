@@ -8110,7 +8110,11 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+
+}
+.text-muted2 {
+  --bs-text-opacity: 1;
+  color:#915b5b
 }
 
 .text-black-50 {
@@ -10967,7 +10971,7 @@ p {
   }
 }
 header.masthead {
-  padding-top: 20rem;
+  padding-top: 15rem;
   padding-bottom: 20rem;
   text-align: center;
   color: #fff;
@@ -12675,6 +12679,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 .partner-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  cursor: pointer;
 }
 
 .partner-item:hover .partner-image {
@@ -12739,6 +12744,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 
 .testimonial-box {
   background: white;
+  background: linear-gradient(135deg, #F8EDE3, #C4D6B0);
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
@@ -12751,6 +12757,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 .testimonial-box:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  cursor: pointer;
 }
 
 .testimonial-box img {
@@ -12758,7 +12765,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
   height: 100px;
   border-radius: 50%;
   margin-bottom: 25px;
-  border: 4px solid #ffc800;
+  border: 4px solid #275942;
   padding: 5px;
   background: white;
   transition: transform 0.3s ease;
@@ -12769,7 +12776,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 }
 
 .stars {
-  color: #ffc800;
+  color: #298d1e;
   margin-bottom: 20px;
 }
 
@@ -12812,7 +12819,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
   left: 0;
   right: 0;
   height: 4px;
-  background: #ffc800;
+  background: #62db1a;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -12932,7 +12939,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 }
 
 .portfolio-item:hover .portfolio-caption-heading {
-  color: #ffc800;
+  color: #00A67E;
 }
 
 /* Grupo de botones mejorado */
@@ -13938,7 +13945,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 
 .coffee-button:hover .button-text2 {
   
-  color: #bf9600;
+  color: #bcffa9;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 .animation-container {
@@ -13947,7 +13954,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 }
 /* Highlight words */
 .highlight-word {
-  background: linear-gradient(45deg,#997800, #997800);
+  background: linear-gradient(45deg, #51cd32, #ffd022);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
