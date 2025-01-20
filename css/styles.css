@@ -12144,7 +12144,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Estilos para la sección del equipo */
 #team {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background-image: url('https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg');
   padding: 100px 0;
   position: relative;
   overflow: hidden;
@@ -12493,8 +12493,11 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 .team-background {
   background-color: #f8f8fa;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.857 8.485 15.272 9.9l9.9-9.9h-2.83zM32 0l-3.657 3.657 1.414 1.414L33.03 2.828 32 0zm-10.657 0l-2.828 2.828L20.93 5.657 23.757 2.828 21.343 0zM32 0l-9.9 9.9 1.415 1.414L34.243 0H32zm21.314 0L42.828 10.485 44.242 11.9l8.485-8.485L53.314 0zM42.485 0L33.03 9.455l1.414 1.415L44.9 0h-2.414zm-6.97 0L26.272 9.243l1.414 1.414L37.93 0h-2.414zM46.142 0L35.686 10.456l1.414 1.414L48.557 0h-2.415zm-13.94 0L22.96 9.242l1.414 1.414L35.616 0H32.2zM15.03 0L4.574 10.456l1.414 1.414L16.444 0H15.03z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-  padding: 6rem 0;
+  background: linear-gradient(135deg, #f6e8d5, #e5d1b8); /* Degradado en tonos cacao suave */
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6rem 2rem;
+  border-radius: 20px;
+
 }
 
 /* Mejoras adicionales para los elementos del equipo */
@@ -13895,14 +13898,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 }
 
 /* Estilos para palabras especiales en el masthead */
-.highlight-word {
-  background: linear-gradient(45deg, #8B4513, #4A2511);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  animation: shimmer 2s infinite;
-}
+
 
 @keyframes shimmer {
   0% { background-position: -100%; }
@@ -13912,10 +13908,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 /* Estilos específicos para el botón de taza de café */
 
 
-.coffee-button:hover .button-text2 {
-  color: #C4A484;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
+
 .coffee-button {
   position: relative;
   display: inline-flex;
@@ -13945,7 +13938,7 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 
 .coffee-button:hover .button-text2 {
   
-  color: #C4A484;
+  color: #bf9600;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 .animation-container {
@@ -13954,10 +13947,23 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 }
 /* Highlight words */
 .highlight-word {
-  background: linear-gradient(45deg, #C4A484, #8B7355);
+  background: linear-gradient(45deg,#997800, #997800);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-weight: bold;
   padding: 0 5px;
+}
+
+.hola{
+  font-size: 2rem;
+  color: #000;
+  font-weight: bold;
+}
+
+.hola2{
+  font-size: 0.8rem;
+  color: #ece2bd  ;
+  font-style: italic;
+  
 }
