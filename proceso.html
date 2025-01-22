@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procesos de Producción</title>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    
     <style>
         * {
             margin: 0;
@@ -159,6 +163,11 @@
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
 
+        .fa-seedling{
+            font-size: 64px;
+            color: #22c55e;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
         /* Colores específicos para cada sección */
         #siembra .feather { stroke: #22c55e; }
         #cosecha .feather { stroke: #eab308; }
@@ -346,11 +355,13 @@
     text-decoration: none;
     transition: all 0.3s ease;
     backdrop-filter: blur(15px);
+    gap: 10px ;
 }
 
 .btn-modern-transparent i {
     margin-right: 8px;
     transition: transform 0.3s ease;
+    
 }
 
 .btn-modern-transparent:hover {
@@ -416,6 +427,8 @@
     </style>
 </head>
 <body>
+    
+    
     <!-- Navegación por puntos -->
     <div class="nav-dots">
         <div class="nav-dot active" data-section="siembra"></div>
@@ -425,7 +438,7 @@
         <div class="nav-dot " data-section="empaquetado"></div>
         <div class="nav-dot " data-section="exportacion"></div>
     </div>
-
+    
     <!-- Indicador de scroll 
     <div class="scroll-indicator">
         <i data-feather="mouse"></i>
@@ -440,7 +453,7 @@
             <div class="content">
                 <div class="info">
                     <div class="titulo">
-                        <i data-feather="seedling"></i>
+                        <i class="fas fa-seedling"></i>
                         <h2>Siembra</h2>
                     </div>
                     <p class="descripcion">
@@ -521,7 +534,7 @@
             <div class="content">
                 <div class="info">
                     <div class="titulo">
-                        <i data-feather="sun"></i>
+                        <i data-feather="wind"></i>
                         <h2>Secado</h2>
                     </div>
                     <p class="descripcion">
@@ -683,6 +696,13 @@
         Volver al Catálogo
     </a>
     </div>
+
+    <script>
+        // Inicializar los iconos de Feather
+        feather.replace();
+      </script>
+
+    
   
 </body>
 
