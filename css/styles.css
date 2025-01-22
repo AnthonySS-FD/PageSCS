@@ -11001,10 +11001,18 @@ header.masthead .masthead-heading {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.masthead-content{
+  display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Hace que el contenedor tenga toda la altura de la pantalla */
+}
 @media (min-width: 768px) {
   header.masthead {
-        padding-top: 22rem;
+        padding-top: 30rem;
         padding-bottom: 20rem;
+        display: flex;
+        align-items: center;
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
