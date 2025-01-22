@@ -7,8 +7,6 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    
-    
     <style>
         * {
             margin: 0;
@@ -75,6 +73,13 @@
                 transparent 60%);
         }
 
+        #fermentacion .background {
+            background: radial-gradient(circle at top right,
+                rgba(13, 250, 13, 0.644),
+                rgba(202, 138, 4, 0.1),
+                transparent 60%);
+        }
+
         #secado .background {
             background: radial-gradient(circle at top right,
                 rgba(239, 68, 68, 0.3),
@@ -82,7 +87,22 @@
                 transparent 60%);
         }
 
-        #zarandeo .background {
+        #trillado .background {
+            background: radial-gradient(circle at top right,
+                rgba(241, 127, 99, 0.3),
+                rgba(67, 56, 202, 0.1),
+                transparent 60%);
+        }
+
+        #clasificacion .background {
+            background: radial-gradient(circle at top right,
+                rgba(5, 37, 221, 0.459),
+                rgba(67, 56, 202, 0.1),
+                transparent 60%);
+        }
+
+
+        #tostado .background {
             background: radial-gradient(circle at top right,
                 rgba(99, 102, 241, 0.3),
                 rgba(67, 56, 202, 0.1),
@@ -91,7 +111,7 @@
 
         #empaquetado .background {
             background: radial-gradient(circle at top right,
-                rgba(168, 85, 247, 0.3),
+                rgba(37, 248, 220, 0.3),
                 rgba(126, 34, 206, 0.1),
                 transparent 60%);
         }
@@ -162,17 +182,20 @@
             height: 64px;
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
-
         .fa-seedling{
             font-size: 64px;
             color: #22c55e;
             filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
+
         /* Colores específicos para cada sección */
-        #siembra .feather { stroke: #22c55e; }
+        
         #cosecha .feather { stroke: #eab308; }
+        #fermentacion .feather { stroke: #50ca18; }
         #secado .feather { stroke: #ef4444; }
-        #zarandeo .feather { stroke: #6366f1; }
+        #trillado .feather { stroke: #742e19cc; }
+        #clasificacion .feather { stroke: #0400ffd3; }
+        #tostado .feather { stroke: #6366f1; }
         #empaquetado .feather { stroke: #a855f7; }
         #exportacion .feather { stroke: #0ea5e9; }
 
@@ -230,8 +253,11 @@
         /* Gradientes específicos para cada sección */
         #siembra .stat-number { background: linear-gradient(135deg, #22c55e, #16b981); }
         #cosecha .stat-number { background: linear-gradient(135deg, #eab308, #ca8a04); }
+        #fermentacion .stat-number { background: linear-gradient(135deg, #0ef007e1, #3db804b4); }
         #secado .stat-number { background: linear-gradient(135deg, #ef4444, #b91c1c); }
-        #zarandeo .stat-number { background: linear-gradient(135deg, #6366f1, #4338ca); }
+        #trillado .stat-number { background: linear-gradient(135deg, #86380a, #5a2a03); }
+        #clasificacion .stat-number { background: linear-gradient(135deg, #242fca, #03135a); }
+        #tostado .stat-number { background: linear-gradient(135deg, #6366f1, #4338ca); }
         #empaquetado .stat-number { background: linear-gradient(135deg, #a855f7, #7e22ce); }
         #exportacion .stat-number { background: linear-gradient(135deg, #0ea5e9, #0369a1); }
 
@@ -355,13 +381,12 @@
     text-decoration: none;
     transition: all 0.3s ease;
     backdrop-filter: blur(15px);
-    gap: 10px ;
+    gap:10px;
 }
 
 .btn-modern-transparent i {
     margin-right: 8px;
     transition: transform 0.3s ease;
-    
 }
 
 .btn-modern-transparent:hover {
@@ -427,25 +452,25 @@
     </style>
 </head>
 <body>
-    
-    
     <!-- Navegación por puntos -->
     <div class="nav-dots">
         <div class="nav-dot active" data-section="siembra"></div>
         <div class="nav-dot " data-section="cosecha"></div>
+        <div class="nav-dot " data-section="fermentacion"></div>
         <div class="nav-dot " data-section="secado"></div>
-        <div class="nav-dot " data-section="zarandeo"></div>
+        <div class="nav-dot " data-section="trillado"></div>
+        <div class="nav-dot " data-section="clasificacion"></div>
+        <div class="nav-dot " data-section="tostado"></div>
         <div class="nav-dot " data-section="empaquetado"></div>
         <div class="nav-dot " data-section="exportacion"></div>
     </div>
-    
+
     <!-- Indicador de scroll 
     <div class="scroll-indicator">
         <i data-feather="mouse"></i>
         <span>Desliza para explorar</span>
     </div>
     -->
-    <!-- Sección de Siembra -->
     <section class="proceso-section active" id="siembra">
         <div class="background"></div>
         <div class="glass-effect"></div>
@@ -457,21 +482,21 @@
                         <h2>Siembra</h2>
                     </div>
                     <p class="descripcion">
-                        Nuestras semillas son cuidadosamente seleccionadas y sembradas en terrenos óptimos 
-                        para garantizar la mejor calidad desde el inicio del proceso. Utilizamos técnicas 
-                        sostenibles y trabajamos con agricultores expertos para asegurar un cultivo excepcional.
+                        Las semillas de café son seleccionadas cuidadosamente para garantizar 
+                        plantas fuertes y saludables. Los agricultores emplean técnicas sostenibles 
+                        y monitorean las condiciones del suelo para optimizar el crecimiento del cafeto.
                     </p>
                     <div class="stats">
                         <div class="stat-item">
-                            <div class="stat-number">100+</div>
+                            <div class="stat-number">150+</div>
                             <div class="stat-label">Hectáreas cultivadas</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">95%</div>
+                            <div class="stat-number">92%</div>
                             <div class="stat-label">Tasa de germinación</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">10+</div>
+                            <div class="stat-number">12+</div>
                             <div class="stat-label">Años de experiencia</div>
                         </div>
                     </div>
@@ -485,8 +510,7 @@
         </div>
     </section>
 
-    <!-- Sección de Cosecha -->
-    <section class="proceso-section " id="cosecha">
+    <section class="proceso-section" id="cosecha">
         <div class="background"></div>
         <div class="glass-effect"></div>
         <div class="container">
@@ -497,36 +521,74 @@
                         <h2>Cosecha</h2>
                     </div>
                     <p class="descripcion">
-                        La cosecha se realiza en el momento óptimo de maduración, seleccionando 
-                        manualmente cada grano para garantizar la más alta calidad. Nuestros 
-                        expertos agricultores identifican el punto exacto de maduración para 
-                        obtener el mejor sabor y aroma.
+                        La cosecha se lleva a cabo manualmente para seleccionar solo los granos 
+                        maduros. Este proceso asegura que cada lote de café mantenga una calidad 
+                        uniforme y excepcional.
                     </p>
                     <div class="stats">
                         <div class="stat-item">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Calidad de selección</div>
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Granos maduros seleccionados</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">2000+</div>
+                            <div class="stat-number">3000+</div>
                             <div class="stat-label">Toneladas anuales</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Variedades cultivadas</div>
+                            <div class="stat-number">20+</div>
+                            <div class="stat-label">Variedades de café</div>
                         </div>
                     </div>
                 </div>
                 <div class="imagen-container">
                     <div class="imagen-wrapper">
-                        <img src="https://cdn.pixabay.com/photo/2014/09/19/19/13/cocoa-452911_960_720.jpg" alt="Proceso de cosecha">
+                        <img src="https://image.lexica.art/full_webp/303a4b81-5a6f-4e05-8f8a-2277244b2f64" alt="Proceso de cosecha">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Secado -->
+
+    <section class="proceso-section" id="fermentacion">
+        <div class="background"></div>
+        <div class="glass-effect"></div>
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <div class="titulo">
+                        <i data-feather="droplet"></i>
+                        <h2>Fermentación</h2>
+                    </div>
+                    <p class="descripcion">
+                        Durante la fermentación, los granos de café se colocan en tanques donde 
+                        se eliminan restos de pulpa adherida. Este proceso mejora los perfiles 
+                        de sabor y es monitoreado cuidadosamente para evitar sobrefermentaciones.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">30h</div>
+                            <div class="stat-label">Duración promedio</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Control de calidad</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Aroma mejorado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="imagen-container">
+                    <div class="imagen-wrapper">
+                        <img src="https://image.lexica.art/full_webp/44c1034a-181e-4e47-a5c5-f12cfb9a7080" alt="Proceso de fermentación">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="proceso-section" id="secado">
         <div class="background"></div>
         <div class="glass-effect"></div>
@@ -538,77 +600,153 @@
                         <h2>Secado</h2>
                     </div>
                     <p class="descripcion">
-                        El proceso de secado es crucial para desarrollar los sabores y aromas 
-                        característicos. Utilizamos técnicas tradicionales combinadas con tecnología 
-                        moderna para controlar la humedad y temperatura, asegurando un secado uniforme 
-                        y óptimo.
+                        Los granos de café se secan bajo el sol o en secadores mecánicos hasta alcanzar 
+                        el nivel de humedad ideal. Este paso es crucial para preservar los sabores 
+                        naturales del café.
                     </p>
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number">12%</div>
-                            <div class="stat-label">Humedad ideal</div>
+                            <div class="stat-label">Humedad final</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">99%</div>
-                            <div class="stat-label">Efectividad</div>
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">Eficiencia del proceso</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Monitoreo</div>
+                            <div class="stat-number">8h</div>
+                            <div class="stat-label">Promedio de secado</div>
                         </div>
                     </div>
                 </div>
                 <div class="imagen-container">
                     <div class="imagen-wrapper">
-                        <img src="https://cdn.pixabay.com/photo/2017/06/21/14/57/cocoa-2427493_960_720.jpg" alt="Proceso de secado">
+                        <img src="https://image.lexica.art/full_webp/65d5874a-eb4f-482e-9b4e-03b240abb0e8" alt="Proceso de secado">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Zarandeo -->
-    <section class="proceso-section" id="zarandeo">
+    <section class="proceso-section" id="trillado">
         <div class="background"></div>
         <div class="glass-effect"></div>
         <div class="container">
             <div class="content">
                 <div class="info">
                     <div class="titulo">
-                        <i data-feather="filter"></i>
-                        <h2>Zarandeo</h2>
+                        <i data-feather="layers"></i>
+                        <h2>Trillado</h2>
                     </div>
                     <p class="descripcion">
-                        En esta etapa realizamos una selección meticulosa de los granos, 
-                        clasificándolos por tamaño y calidad. Nuestro proceso de zarandeo 
-                        garantiza que solo los mejores granos lleguen a nuestros clientes, 
-                        cumpliendo con los más altos estándares internacionales.
+                        En el trillado, se eliminan las capas externas que recubren al grano de café, 
+                        incluyendo el pergamino. Este proceso se realiza cuidadosamente para evitar 
+                        dañar el grano, garantizando su calidad para los siguientes pasos.
                     </p>
                     <div class="stats">
                         <div class="stat-item">
-                            <div class="stat-number">5</div>
-                            <div class="stat-label">Niveles de clasificación</div>
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Granos limpios</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">99.9%</div>
-                            <div class="stat-label">Precisión</div>
+                            <div class="stat-number">5%</div>
+                            <div class="stat-label">Pérdida durante el proceso</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">3000</div>
-                            <div class="stat-label">Kg/hora procesados</div>
+                            <div class="stat-number">24h</div>
+                            <div class="stat-label">Capacidad operativa</div>
                         </div>
                     </div>
                 </div>
                 <div class="imagen-container">
                     <div class="imagen-wrapper">
-                        <img src="https://img.freepik.com/fotos-premium/manos-femeninas-granos-cacao_223080-7.jpg?w=1380" alt="Proceso de zarandeo">
+                        <img src="https://img.freepik.com/fotos-premium/granos-cafe-secos-antes-asar_33472-18.jpg?w=1380" alt="Proceso de trillado">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Empaquetado -->
+    <section class="proceso-section" id="clasificacion">
+        <div class="background"></div>
+        <div class="glass-effect"></div>
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <div class="titulo">
+                        <i data-feather="check-circle"></i>
+                        <h2>Clasificación</h2>
+                    </div>
+                    <p class="descripcion">
+                        Después del trillado, los granos de café se clasifican según su tamaño, peso y 
+                        calidad. Este paso es fundamental para asegurar que solo los mejores granos 
+                        lleguen al cliente final.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Precisión de clasificación</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5 </div>
+                            <div class="stat-label">Categorías de calidad</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8h</div>
+                            <div class="stat-label">Duración promedio</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="imagen-container">
+                    <div class="imagen-wrapper">
+                        <img src="https://cdn.pixabay.com/photo/2021/01/18/12/38/coffee-5928009_960_720.jpg" alt="Proceso de clasificación">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="proceso-section" id="tostado">
+        <div class="background"></div>
+        <div class="glass-effect"></div>
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <div class="titulo">
+                        <i data-feather="coffee"></i>
+                        <h2>Tostado</h2>
+                    </div>
+                    <p class="descripcion">
+                        Los granos de café se tuestan a temperaturas cuidadosamente controladas para 
+                        desarrollar su aroma y sabor característico. Cada lote se ajusta según el 
+                        perfil de tostado deseado.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">200°C</div>
+                            <div class="stat-label">Temperatura promedio</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15m</div>
+                            <div class="stat-label">Duración del tostado</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Control de calidad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="imagen-container">
+                    <div class="imagen-wrapper">
+                        <img src="https://image.lexica.art/full_webp/577568b7-c164-4fc1-b995-dd29e91659ae" alt="Proceso de tostado">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="proceso-section" id="empaquetado">
         <div class="background"></div>
         <div class="glass-effect"></div>
@@ -620,22 +758,21 @@
                         <h2>Empaquetado</h2>
                     </div>
                     <p class="descripcion">
-                        Utilizamos materiales de alta calidad para el empaquetado que preservan 
-                        las propiedades organolépticas de nuestros productos. Cada empaque está 
-                        diseñado para mantener la frescura y calidad durante el transporte y 
-                        almacenamiento.
+                        El café se empaqueta en condiciones controladas para mantener su frescura 
+                        y calidad. Utilizamos materiales sostenibles que aseguran la preservación 
+                        de las propiedades organolépticas del producto.
                     </p>
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number">100%</div>
-                            <div class="stat-label">Eco-friendly</div>
+                            <div class="stat-label">Materiales reciclables</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">6+</div>
-                            <div class="stat-label">Tipos de empaque</div>
+                            <div class="stat-number">7+</div>
+                            <div class="stat-label">Formatos de empaque</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">5000</div>
+                            <div class="stat-number">4500</div>
                             <div class="stat-label">Unidades diarias</div>
                         </div>
                     </div>
@@ -649,7 +786,6 @@
         </div>
     </section>
 
-    <!-- Sección de Exportación -->
     <section class="proceso-section" id="exportacion">
         <div class="background"></div>
         <div class="glass-effect"></div>
@@ -661,22 +797,21 @@
                         <h2>Exportación</h2>
                     </div>
                     <p class="descripcion">
-                        Gestionamos toda la cadena logística para asegurar que nuestros productos 
-                        lleguen a su destino en perfectas condiciones. Trabajamos con los mejores 
-                        partners logísticos y cumplimos con todas las certificaciones internacionales 
-                        requeridas.
+                        Gestionamos la logística internacional para llevar nuestro café a diferentes 
+                        partes del mundo. Contamos con certificaciones internacionales que respaldan 
+                        la calidad de nuestros productos.
                     </p>
                     <div class="stats">
                         <div class="stat-item">
-                            <div class="stat-number">25+</div>
+                            <div class="stat-number">30+</div>
                             <div class="stat-label">Países de destino</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">48h</div>
-                            <div class="stat-label">Tiempo de despacho</div>
+                            <div class="stat-label">Tiempo promedio de despacho</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">100%</div>
+                            <div class="stat-number">99.5%</div>
                             <div class="stat-label">Entregas a tiempo</div>
                         </div>
                     </div>
@@ -690,25 +825,22 @@
         </div>
     </section>
 
+
+
     <div class="container2" >
     <a href="index.html#portfolio" class="btn-modern-transparent">
         <i class="fas fa-arrow-left"></i>
         Volver al Catálogo
     </a>
     </div>
-
-    <script>
-        // Inicializar los iconos de Feather
-        feather.replace();
-      </script>
-
-    
-  
+ 
 </body>
 
 <script>
+    
     // Inicializar los iconos de Feather
-  
+    feather.replace();
+ 
 
     // Configurar el Intersection Observer para las animaciones
     document.querySelector('.proceso-section').classList.add('active');
@@ -777,6 +909,6 @@
         }
     });
 
-
+    
 </script>
 </html>
