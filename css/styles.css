@@ -11002,7 +11002,7 @@ header.masthead .masthead-heading {
 }
 
 .masthead-content{
-  display: flex;
+  display: inline;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     height: 100vh; /* Hace que el contenedor tenga toda la altura de la pantalla */
