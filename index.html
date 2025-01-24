@@ -257,7 +257,7 @@
                                 <h3>Lima</h3>
                                 <div class="location-details">
 
-                                    <span><i class="fas fa-users"></i> 50+ empleados</span>
+                                    <span><i class="fas fa-users"></i> 10+ empleados</span>
                                     <span><i class="fas fa-building"></i> Oficinas Centrales</span>
                                 </div>
                                 <p class="location-description">
@@ -288,11 +288,11 @@
                             <div class="info-content">
                                 <h3>Ucayali-Aguaytia</h3>
                                 <div class="location-details">
-                                    <span><i class="fas fa-leaf"></i> Cultivos orgánicos</span>
-                                    <span><i class="fas fa-warehouse"></i> Centro de acopio</span>
+                                    <span><i class="fas fa-leaf"></i> Nuestros Cultivos - Fundo</span>
+                                    <span><i class="fas fa-warehouse"></i> Oficina Surcursal - Centro de acopio </span>
                                 </div>
                                 <p class="location-description">
-                                    Centro especializado en producción y procesamiento de cacao orgánico.
+                                    Centro de acopio de cacao,  especializado en producción y procesamiento de cacao y plátano.
                                 </p>
                                 <a href="agricultores.html" class="btn-discover">
                                     Nuestros Agricultores
@@ -319,11 +319,11 @@
                             <div class="info-content">
                                 <h3>Ucayali-San Alejandro</h3>
                                 <div class="location-details">
-                                    <span><i class="fas fa-industry"></i> Planta procesadora</span>
-                                    <span><i class="fas fa-seedling"></i> Cultivos especiales</span>
+                                    <span><i class="fas fa-industry"></i> Centro de Procesos</span>
+                                    <span><i class="fas fa-building"></i> Oficina Surcursal - Centro de acopio </span>
                                 </div>
                                 <p class="location-description">
-                                    Centro de innovación y desarrollo de productos especializados.
+                                    Centro de acopio de cacao,  especializado en producción y procesamiento de cacao.
                                 </p>
                                 <a href="agricultores.html" class="btn-discover">
                                     Nuestros Agricultores
@@ -738,10 +738,9 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Excelente servicio, superaron todas nuestras expectativas. Un equipo verdaderamente
-                            profesional."</p>
+                        <p>"La calidad del cacao que recibimos es incomparable. Nuestros clientes no paran de elogiar el sabor único. ¡Excelente servicio!"</p>
                         <h4>John Doe</h4>
-                        <span>CEO, Tech Solutions</span>
+                        <span>Jefe de Abastecimiento</span>
                     </div>
                 </div>
 
@@ -756,9 +755,9 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Profesionalismo y dedicación excepcional. Resultados increíbles en cada proyecto."</p>
+                        <p>"El café que importamos de SCS-EXPORT ha sido un éxito rotundo. Siempre cumplen con los tiempos y ofrecen productos de alta calidad."</p>
                         <h4>María García</h4>
-                        <span>Directora de Marketing</span>
+                        <span>Jefa de Producción</span>
                     </div>
                 </div>
 
@@ -773,9 +772,9 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <p>"Han transformado completamente nuestra operación. Su expertise es incomparable."</p>
+                        <p>"Trabajar con ellos fue clave para el crecimiento de nuestro negocio. Su atención personalizada y productos de alta calidad nos garantizan el éxito."</p>
                         <h4>Carlos Rodríguez</h4>
-                        <span>Director de Operaciones</span>
+                        <span>Coordinador de Logística Internacional</span>
                     </div>
                 </div>
             </div>
@@ -895,11 +894,11 @@
                         <div class="contact-info">
                             <div class="contact-item">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span> Av. Principal 123, Lima, Perú</span>
+                                <span> Calle Monte Rosa 284, Santiago de Surco 15038</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
-                                <span> +51 997 001 233</span>
+                                <span> +51 902 118 706</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-envelope"></i>
@@ -926,7 +925,7 @@
                     <h3 class="footer-title">Productos</h3>
                     <ul class="footer-links">
                         <li><a href="fichatecnica-cafe.html">Café Premium</a></li>
-                        <li><a href="fichatecnica-cacao.html">Cacao Orgánico</a></li>
+                        <li><a href="fichatecnica-cacao.html">Cacao Premium</a></li>
                         <li><a href="fichatecnica-platano.html">Plátano Beyaco</a></li>
                         <li><a href="#certificates">Certificaciones</a></li>
                         <li><a href="#quality">Control de Calidad</a></li>
@@ -1378,6 +1377,74 @@
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
 
+
+
+    <div class="popup-overlay">
+        <div class="popup-container">
+            <button class="close-btn">
+                <i data-feather="x"></i>
+            </button>
+
+            <div class="step active" data-step="1">
+                <div class="icon-container">
+                    <i data-feather="coffee"></i>
+                    <i data-feather="package"></i>
+                </div>
+                <h2 class="h2">¡Cotiza tu pedido personalizado GRATIS!</h2>
+                <p class="p2">Descubre nuestra selección premium de café y cacao. ¡Cotiza ahora y lleva lo mejor a tu negocio! <br><i>Exportamos café y cacao de Perú, directo a cualquier parte del mundo.</i></p>
+                <button class="btn" onclick="nextStep(2)">¡Quiero mi cotización!</button>
+            </div>
+
+            <div class="step" data-step="2">
+                <h2>Cuéntanos sobre tu interés</h2>
+                <form id="quotationForm" action="https://formspree.io/f/xlddoknp" method="POST" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="coffee" name="products" value="coffee" onchange="toggleQuantityInput('coffee')">
+                                <label for="coffee">Café</label>
+                            </div>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="cacao" name="products" value="cacao" onchange="toggleQuantityInput('cacao')">
+                                <label for="cacao">Cacao</label>
+                            </div>
+                        </div>
+                        <div id="coffee-quantity" class="quantity-input">
+                            <input type="number" name="coffee_tons" placeholder="Toneladas de café requeridas" min="1">
+                        </div>
+                        <div id="cacao-quantity" class="quantity-input">
+                            <input type="number" name="cacao_tons" placeholder="Toneladas de cacao requeridas" min="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Mensaje adicional o requerimientos específicos" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i data-feather="send"></i> Enviar
+                    </button>
+                </form>
+            </div>
+
+            <div class="step" data-step="3">
+                <div class="success-icon">
+                    <i data-feather="check"></i>
+                </div>
+                <h2>¡Gracias por tu interés!</h2>
+                <p class="p">Nos pondremos en contacto contigo pronto con tu cotización personalizada.</p>
+                <button class="btn" onclick="closePopup()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -1511,6 +1578,69 @@
             });
     });
 
+    
+
+    // Detectar cuando el usuario intenta salir
+    // Prevent multiple popup shows
+    let popupShown = false;
+
+// Show popup when mouse leaves window
+document.addEventListener('mouseleave', function(e) {
+    if (!popupShown && e.clientY <= 0) {
+        document.querySelector('.popup-overlay').classList.add('active');
+        popupShown = true;
+    }
+});
+
+// Toggle quantity inputs
+function toggleQuantityInput(product) {
+    const input = document.getElementById(`${product}-quantity`);
+    input.classList.toggle('active');
+}
+
+// Navigate between steps
+function nextStep(step) {
+    document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+    document.querySelector(`[data-step="${step}"]`).classList.add('active');
+}
+
+// Close popup
+function closePopup() {
+    document.querySelector('.popup-overlay').classList.remove('active');
+}
+
+// Form submission
+function submitForm(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        form.reset();
+        nextStep(3);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error al enviar el formulario');
+    });
+}
+
+// Close button and overlay click
+document.querySelector('.close-btn').addEventListener('click', closePopup);
+document.querySelector('.popup-overlay').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closePopup();
+});
+
+feather.replace();
+    
 </script>
 
 </html>
