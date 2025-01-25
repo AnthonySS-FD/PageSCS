@@ -12289,17 +12289,20 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .social-btn.linkedin {
-  background: #0077b5;
+  background: #0077B5;
 }
 
 .social-btn.twitter {
-  background: #1da1f2;
+  background: #1877F2;
 }
 
 .social-btn.email {
   background: #ea4335;
 }
 
+.social-btn.instagram {
+  background: linear-gradient(45deg, #f7b7d1, #d4527b, #9b38d7, #f06c1d);
+}
 
 
 
@@ -13716,10 +13719,10 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 .submit-btn {
   width: 100%;
   padding: 15px;
-  background: #ffc107;
+  background: #198754;
   border: none;
   border-radius: 8px;
-  color: #1a1a1a;
+  color: whitesmoke;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -13727,7 +13730,8 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 }
 
 .submit-btn:hover {
-  background: #ffcd38;
+  background: #14bf70;
+  color: whitesmoke;
 }
 
 @keyframes modalSlideIn {
