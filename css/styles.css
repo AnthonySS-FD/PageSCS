@@ -3804,7 +3804,7 @@ textarea.form-control-lg {
 }
 .navbar-nav .show > .nav-link,
 .navbar-nav .nav-link.active {
-  color: var(--bs-navbar-active-color);
+  color: var(testimo);
 }
 .navbar-nav .dropdown-menu {
   position: static;
@@ -12764,6 +12764,10 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+             -15px -15px 30px #ffffff;
 }
 
 .testimonial-box:hover {
@@ -13413,6 +13417,18 @@ url('https://cdn.pixabay.com/photo/2019/05/08/11/10/port-4188383_960_720.jpg');
 .contact-item i {
   margin-right: 10px;
   color: #038b57; /* Cambiado de #ffc107 a verde */
+}
+
+.contact-item5 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.contact-item5 i {
+  margin-right: 10px !important;
+  color: #038b57 !important ;/* Cambiado de #ffc107 a verde */
 }
 
 .footer-title {
@@ -14254,13 +14270,11 @@ input:focus, textarea:focus {
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transform: perspective(1000px) rotateY(0deg);
   transition: all 0.5s ease;
 }
 
 .about-text-content:hover {
-  transform: perspective(1000px) rotateY(1deg);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .video-container {
@@ -14471,4 +14485,8 @@ input:focus, textarea:focus {
   .about-container {
       padding: 1rem;
   }
+}
+#address,#phone,#email{
+  margin-right: 10px !important;
+  color: #038b57 !important ;/* Cambiado de #ffc107 a verde */
 }
