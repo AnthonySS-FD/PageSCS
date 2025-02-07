@@ -389,17 +389,132 @@
         #tawk-to-iframe {
             margin-bottom: 180px !important;
         }
+
+        @media (max-width: 768px) {
+    /* Hero Section Adjustments */
+    .hero-section {
+        height: 30vh;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Info Cards Responsiveness */
+    .info-cards {
+        margin-top: -30px;
+    }
+
+    .info-cards .row {
+        flex-direction: column;
+    }
+
+    .info-cards .col-md-4 {
+        margin-bottom: 15px;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .info-card i {
+        font-size: 2rem;
+    }
+
+    /* Contact Form and Map */
+    .contact-form-container,
+    .map-container {
+        padding: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .form-floating .form-control {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    /* Hide specific elements on mobile */
+    .whatsapp-float,
+    #tawk-to-iframe {
+        display: none !important;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+        padding: 2rem 0;
+    }
+
+    .accordion-button {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    /* Footer Responsiveness */
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .newsletter-form .input-group {
+        flex-direction: column;
+    }
+
+    .newsletter-form input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+/* Ultra-small screens additional adjustments */
+@media (max-width: 480px) {
+    .hero-section {
+        height: 25vh;
+        padding-top: 100px;
+        
+        margin-top: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 0 !important;
+    }
+    .faq-section {
+    padding: 5rem 0 !important; 
+}
+}
     </style>
     
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js"></script>
-    <style>
-        @media (min-width: 768px) {
-    section {
-         padding:  0;
-    }
-}
-    </style>
+  
+  
 </head>
 
 <body>
@@ -639,18 +754,18 @@
                         </div>
                     </form>
                     <div class="social-media">
-                        <a href="https://www.facebook.com/scsexport/" class="social-icon" aria-label="Facebook">
+                        <a href="https://www.facebook.com/scsexport/" class="social-icon" aria-label="Facebook" target="_blank">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="https://www.linkedin.com/company/scs-export-sac/posts/?feedView=all" class="social-icon"
-                            aria-label="LinkedIn">
+                            aria-label="LinkedIn" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="https://api.whatsapp.com/send/?phone=51902118706&text&type=phone_number&app_absent=0" class="social-icon"
                             aria-label="WhatsApp" target="_blank">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="https://instagram.com/scsexport" class="social-icon" aria-label="Instagram">
+                        <a href="https://www.instagram.com/scs_export/" class="social-icon" aria-label="Instagram" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
