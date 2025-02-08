@@ -14840,7 +14840,7 @@ input:focus, textarea:focus {
   .stats-grid {
       grid-template-columns: 1fr;
   }
-
+  
  
 }
 
@@ -14892,10 +14892,16 @@ input:focus, textarea:focus {
 }
 
 .conteinerfondo{
-  background: linear-gradient(180deg, rgb(150 255 154 / 95%) 0%, rgba(255, 255, 255, 0.8) 100%);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0%) 0%, rgb(15 15 15 / 58%) 100%);
 }
 
-
+@media (max-width: 576px) {
+.container9{
+  display: none;
+}
+  
+ 
+}
 
 
 
