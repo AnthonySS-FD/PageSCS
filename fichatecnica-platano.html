@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="https://scsexport.com/wp-content/uploads/2023/06/Recurso-2scs-1.png" />
+
+    <!-- Enlaces existentes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>Ficha Técnica - Cacao Premium Peruano</title>
+
+    <style>
+        /* Estilos base mejorados */
+        :root {
+            --primary-color: #3e2a1f;
+            --secondary-color: #2c1810;
+            --accent-color: #ffc107;
+            --text-color: #333;
+            --bg-light: #f5f5f5;
+            --bg-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .ficha-tecnica-hero {
+            position: relative;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://scsexport.com/wp-content/uploads/2024/01/dia4.png') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .floating-beans {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .bean {
+            position: absolute;
+            opacity: 0.1;
+            width: 30px;
+            height: auto;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-100%) rotate(360deg);
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Contenedor principal */
+        .ficha-container {
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Secciones */
+        .section-wrapper {
+            background: var(--bg-white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-wrapper:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            position: relative;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        /* Tablas mejoradas */
+        .interactive-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--bg-white);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .interactive-table th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .interactive-table td {
+            padding: 1.2rem;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+
+        }
+
+        .interactive-table tr:nth-child(even) td {
+            background: #faf6f3;
+        }
+
+        .interactive-table tr:hover td {
+            background: #fff3e6;
+        }
+
+        .interactive-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Notas y descripciones */
+        .note {
+            text-align: left;
+            background: #fff9f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+
+        /* Modelos 3D */
+        .models-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .model-wrapper {
+            position: relative;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .model-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Botones */
+        .action-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .btn-cacao {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--bg-white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-cacao:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .ficha-container {
+                padding: 1rem;
+                margin-top: -30px;
+            }
+
+            .section-wrapper {
+                padding: 1.5rem;
+            }
+
+            .interactive-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .models-container {
+                grid-template-columns: 1fr;
+            }
+
+            .model-wrapper {
+                height: 300px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-cacao {
+                width: 80%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-wrapper {
+                padding: 1rem;
+            }
+
+            .model-wrapper {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="ficha-tecnica-hero">
+        <div class="floating-beans">
+            <!-- Se añaden dinámicamente con JS -->
+        </div>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">Platano Bellaco Harton</h1>
+            <p class="hero-subtitle">Calidad excepcional desde el corazón de la Amazonía</p>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="ficha-container" id="ficha-pdf">
+        <!-- Vista General -->
+        <div class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-title">Vista General del Producto</h2>
+            <div class="note">
+                <p>Tiene tallo color verde con manchas oscuras con una
+                    altura promedio de 2, 10m.y un diámetro en su base de
+                    20 cm. En su madurez fisiológica toma un color verde
+                    amarillento, y de ápice rojo.</p>
+            </div>
+        </div>
+
+        <!-- Ficha Técnica -->
+        <div class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-title">Ficha Técnica</h2>
+            <div id="fichaContent">
+                <table class="interactive-table">
+                    <thead>
+                        <tr>
+                            <th>Campo</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Producto</td>
+                            <td>Plátano Bellaco</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre Internacional</td>
+                            <td>Plantain (Hartón Variety)</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre Científico</td>
+                            <td>Musa paradisiaca</td>
+                        </tr>
+                        <tr>
+                            <td>Partida Arancelaria</td>
+                            <td>0803.90.20.00</td>
+                        </tr>
+                        <tr>
+                            <td>Variedades</td>
+                            <td>Hartón</td>
+                        </tr>
+                        <tr>
+                            <td>Certificación</td>
+                            <td>Convencional</td>
+                        </tr>
+                        <tr>
+                            <td>Auge de Producción</td>
+                            <td>Todo el año, con mayor cosecha entre abril y septiembre.</td>
+                        </tr>
+                        <tr>
+                            <td>Ciudad</td>
+                            <td>Aguaytía, Ucayali</td>
+                        </tr>
+                        <tr>
+                            <td>País</td>
+                            <td>Perú</td>
+                        </tr>
+                        <tr>
+                            <td>Origen</td>
+                            <td>Selva oriental del Perú</td>
+                        </tr>
+                        <tr>
+                            <td>Descripción</td>
+                            <td>El plátano bellaco variedad Hartón es un fruto de gran tamaño, de cáscara gruesa y color verde intenso cuando está fresco, tornándose amarillo con manchas negras al madurar. Es ampliamente utilizado para frituras, sopas y otros preparados culinarios. Su textura es firme y su sabor ligeramente dulce cuando está maduro. Su proceso de cosecha sigue estrictos estándares de calidad y seguridad alimentaria.</td>
+                        </tr>
+                        <tr>
+                            <td>Uso del Producto</td>
+                            <td>El grano de cacao fermentado es materia prima para las fábricas donde se transforma el
+                                grano de cacao en Grano Tostado, Nibs, Licor de Cacao, Manteca de Cacao, Torta de Cacao
+                                en Trozos, Cacao en Polvo, Chocolate de Taza, Chocolates de Consumo, entre otros. Se
+                                utilizan en la industria alimentaria, cosmetología e incluso medicina</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Características -->
+        <div class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-title">Características</h2>
+            <table class="interactive-table">
+                <thead>
+                    <tr>
+                        <th>Características</th>
+                        <th>Parámetro</th>
+                        <th>Especificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Sensorial</b></td>
+                        <td>Fragancia y Aroma</td>
+                        <td>Dulce y ligeramente afrutado</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Sabor</td>
+                        <td>Suave, ligeramente dulce al madurar</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Textura</td>
+                        <td>Firme cuando está verde, suave al madurar</td>
+                    </tr>
+    
+                    <tr>
+                        <td></td>
+                        <td>Olor</td>
+                        <td>Característico a plátano fresco</td>
+                    </tr>
+                    <tr>
+                        <td><b>Físicas</b></td>
+                        <td>Humedad</td>
+                        <td> Máx. 85 %</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Peso unitario</td>
+                        <td>300g - 600g</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Longitud</td>
+                        <td>25cm - 35cm</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Diametro</td>
+                        <td>4cm - 6cm</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Acidez</td>
+                        <td>Media</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Visualización 3D -->
+        <div class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-title">Visualización del Producto</h2>
+            <div class="models-container">
+                <div class="model-wrapper" data-aos="fade-right">
+                    <iframe title="maya2sketchfab" frameborder="0" allowfullscreen mozallowfullscreen="true"
+                        webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                        xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+                        src="https://sketchfab.com/models/631fea1b6ff54372b71dce5da1424432/embed?autostart=1&preload=1&ui_hint=2&transparent=1">
+                    </iframe>
+                </div>
+
+                <div class="model-wrapper" data-aos="fade-left">
+                    
+                        <iframe title="Banana plantation" frameborder="0"
+                            allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                            allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                            execution-while-out-of-viewport execution-while-not-rendered web-share
+                            src="https://sketchfab.com/models/1abbf80f6a6546ae9c7400de5a241005/embed?autostart=1&preload=1&ui_hint=2&transparent=1"> 
+                        </iframe>
+        
+                </div>
+            </div>
+        </div>
+
+        <!-- Empaque y Embalaje -->
+        <div class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-title">Empaque y Embalaje</h2>
+            <table class="interactive-table">
+                <thead>
+                    <tr>
+                        <th>Empaque</th>
+                        <th>Tipo</th>
+                        <th>Material</th>
+                        <th>Capacidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primario</td>
+                        <td>Saco y/o bolsa de polipropileno</td>
+                        <td>Pl</td>
+                        <td>65Kg - 69kg</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Almacenamiento -->
+        <div class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-title">Almacenamiento</h2>
+            <div class="note">
+                <p>Conservar en un lugar fresco y seco, a temperaturas entre 12 y 15°C,No almacenar cerca de sustancias químicas fuertes. </p>
+            </div>
+        </div>
+
+        <!-- Vida Útil -->
+        <div class="section-wrapper" data-aos="fade-up">
+            <h2 class="section-title">Vida Útil</h2>
+            <div class="note">
+                <p>Manteniendo las condiciones adecuadas, su vida útil es de aproximadamente 7 - 15 días en fresco y hasta 6 meses si se procesa en harina o congelado.</p>
+            </div>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="action-buttons">
+            <a href="Ficha Técnica Granos de Cacao - Español.pdf" class="btn-cacao btn-primary" download>
+                <i class="fas fa-download"></i>
+                Descargar Ficha Técnica
+            </a>
+            <a href="index.html#portfolio" class="btn-cacao btn-secondary">
+                <i class="fas fa-arrow-left"></i>
+                Volver al Catálogo
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS con configuración mejorada
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Crear granos flotantes con posiciones y tamaños aleatorios
+        function createFloatingBeans() {
+            const container = document.querySelector('.floating-beans');
+            const beanSizes = [20, 25, 30, 35];
+
+            for (let i = 0; i < 12; i++) {
+                const bean = document.createElement('img');
+                bean.src = 'https://img.freepik.com/foto-gratis/granos-cafe-levitan-sobre-fondo-blanco_485709-33.jpg?t=st=1737402425~exp=1737406025~hmac=61dcca92e4dcc2339f5e7de0faa1cec766f67a3078cbbcb7eb4877379ac32065&w=1380';
+                bean.className = 'bean';
+                bean.style.left = `${Math.random() * 100}%`;
+                bean.style.animationDelay = `${Math.random() * 10}s`;
+                bean.style.width = `${beanSizes[Math.floor(Math.random() * beanSizes.length)]}px`;
+                bean.style.opacity = `${0.1 + Math.random() * 0.1}`;
+                container.appendChild(bean);
+            }
+        }
+
+        // Inicializar los elementos cuando se carga la página
+        window.addEventListener('load', () => {
+            createFloatingBeans();
+        });
+    </script>
+</body>
+
+</html>
